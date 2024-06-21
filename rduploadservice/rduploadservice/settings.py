@@ -173,7 +173,7 @@ CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins (for development only)
 # For production, specify allowed origins
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://example.com",
+    "https://rd.purposebuiltbrands.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True

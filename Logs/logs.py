@@ -1,0 +1,3916 @@
+2024-06-17 14:43:00.012397: Error occurred while reading WSGI handler:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 791, in main
+    env, handler = read_wsgi_handler(response.physical_path)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 633, in read_wsgi_handler
+    handler = get_wsgi_handler(os.getenv("WSGI_HANDLER"))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 616, in get_wsgi_handler
+    raise ValueError('"%s" could not be imported%s' % (handler_name, last_tb))
+ValueError: "rduploadservice.wsgi.application" could not be imported: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 600, in get_wsgi_handler
+    handler = __import__(module_name, fromlist=[name_list[0][0]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "C:\Python312\Lib\site-packages\django\__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'myproject'
+
+
+
+StdOut: 
+
+StdErr: 
+2024-06-17 14:43:00.014393: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 791, in main
+    env, handler = read_wsgi_handler(response.physical_path)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 633, in read_wsgi_handler
+    handler = get_wsgi_handler(os.getenv("WSGI_HANDLER"))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 616, in get_wsgi_handler
+    raise ValueError('"%s" could not be imported%s' % (handler_name, last_tb))
+ValueError: "rduploadservice.wsgi.application" could not be imported: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 600, in get_wsgi_handler
+    handler = __import__(module_name, fromlist=[name_list[0][0]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "C:\Python312\Lib\site-packages\django\__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'myproject'
+
+2024-06-17 14:43:00.017392: Running on_exit tasks
+2024-06-17 14:43:00.062395: wfastcgi.py 3.0.0 closed
+2024-06-17 14:44:07.148577: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-17 14:44:07.149597: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-17 14:44:07.151578: unable to import ptvsd to enable debugging
+2024-06-17 14:44:07.152576: wfastcgi.py 3.0.0 initialized
+2024-06-17 14:46:21.686933: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-17 14:46:21.688932: Running on_exit tasks
+2024-06-17 14:46:34.757802: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-17 14:46:34.759802: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-17 14:46:34.760802: unable to import ptvsd to enable debugging
+2024-06-17 14:46:34.761802: wfastcgi.py 3.0.0 initialized
+2024-06-17 14:51:49.061408: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-17 14:51:49.062401: Running on_exit tasks
+2024-06-17 14:51:49.063404: wfastcgi.py 3.0.0 closed
+2024-06-17 14:56:25.021525: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-17 14:56:25.023525: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-17 14:56:25.024524: unable to import ptvsd to enable debugging
+2024-06-17 14:56:25.027524: wfastcgi.py 3.0.0 initialized
+2024-06-17 15:01:39.294012: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-17 15:01:39.295007: Running on_exit tasks
+2024-06-17 15:01:39.296009: wfastcgi.py 3.0.0 closed
+2024-06-18 10:20:14.126396: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 10:20:14.127396: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 10:20:14.128396: unable to import ptvsd to enable debugging
+2024-06-18 10:20:14.130401: wfastcgi.py 3.0.0 initialized
+2024-06-18 10:22:00.760657: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 10:22:00.762664: Running on_exit tasks
+2024-06-18 10:22:07.077276: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 10:22:07.078257: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 10:22:07.080259: unable to import ptvsd to enable debugging
+2024-06-18 10:22:07.081258: wfastcgi.py 3.0.0 initialized
+2024-06-18 10:22:35.649737: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 10:22:35.650741: Running on_exit tasks
+2024-06-18 10:22:40.073234: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 10:22:40.075243: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 10:22:40.077233: unable to import ptvsd to enable debugging
+2024-06-18 10:22:40.078244: wfastcgi.py 3.0.0 initialized
+2024-06-18 10:27:54.380817: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 10:27:54.382821: Running on_exit tasks
+2024-06-18 10:27:54.383831: wfastcgi.py 3.0.0 closed
+2024-06-18 10:29:42.571837: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 10:29:42.573829: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 10:29:42.574827: unable to import ptvsd to enable debugging
+2024-06-18 10:29:42.575832: wfastcgi.py 3.0.0 initialized
+2024-06-18 10:32:24.556115: wfastcgi.py exiting because uploadservice\urls.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 10:32:24.557121: Running on_exit tasks
+2024-06-18 10:33:07.798815: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 10:33:07.800819: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 10:33:07.801814: unable to import ptvsd to enable debugging
+2024-06-18 10:33:07.802813: wfastcgi.py 3.0.0 initialized
+2024-06-18 10:34:31.742979: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 10:34:31.744987: Running on_exit tasks
+2024-06-18 10:37:18.560685: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 10:37:18.561682: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 10:37:18.563687: unable to import ptvsd to enable debugging
+2024-06-18 10:37:18.564697: wfastcgi.py 3.0.0 initialized
+2024-06-18 10:44:52.864406: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 10:44:52.866404: Running on_exit tasks
+2024-06-18 10:44:52.867405: wfastcgi.py 3.0.0 closed
+2024-06-18 10:59:48.535792: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 10:59:48.536783: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 10:59:48.538803: unable to import ptvsd to enable debugging
+2024-06-18 10:59:48.540786: wfastcgi.py 3.0.0 initialized
+2024-06-18 11:05:02.846361: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 11:05:02.848346: Running on_exit tasks
+2024-06-18 11:05:02.849335: wfastcgi.py 3.0.0 closed
+2024-06-18 11:09:30.832883: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 11:09:30.834879: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 11:09:30.835875: unable to import ptvsd to enable debugging
+2024-06-18 11:09:30.837896: wfastcgi.py 3.0.0 initialized
+2024-06-18 11:19:25.112278: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 11:19:25.113284: Running on_exit tasks
+2024-06-18 11:19:25.115277: wfastcgi.py 3.0.0 closed
+2024-06-18 11:29:25.990258: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 11:29:25.992258: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 11:29:25.993261: unable to import ptvsd to enable debugging
+2024-06-18 11:29:25.994265: wfastcgi.py 3.0.0 initialized
+2024-06-18 11:38:10.229608: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 11:38:10.231615: Running on_exit tasks
+2024-06-18 11:38:10.232609: wfastcgi.py 3.0.0 closed
+2024-06-18 13:12:03.544130: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 13:12:03.545138: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 13:12:03.547129: unable to import ptvsd to enable debugging
+2024-06-18 13:12:03.549130: wfastcgi.py 3.0.0 initialized
+2024-06-18 13:17:17.757588: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 13:17:17.759592: Running on_exit tasks
+2024-06-18 13:17:17.760584: wfastcgi.py 3.0.0 closed
+2024-06-18 13:21:33.598576: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 13:21:33.600573: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 13:21:33.602565: unable to import ptvsd to enable debugging
+2024-06-18 13:21:33.603570: wfastcgi.py 3.0.0 initialized
+2024-06-18 13:23:38.217131: wfastcgi.py exiting because uploadservice\urls.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 13:23:38.218161: Running on_exit tasks
+2024-06-18 13:23:53.357180: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 13:23:53.358187: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 13:23:53.360173: unable to import ptvsd to enable debugging
+2024-06-18 13:23:53.361183: wfastcgi.py 3.0.0 initialized
+2024-06-18 13:30:46.999450: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 13:30:47.000456: Running on_exit tasks
+2024-06-18 13:30:47.002448: wfastcgi.py 3.0.0 closed
+2024-06-18 13:31:29.565042: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 13:31:29.568042: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 13:31:29.569033: unable to import ptvsd to enable debugging
+2024-06-18 13:31:29.570034: wfastcgi.py 3.0.0 initialized
+2024-06-18 13:37:21.668886: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 13:37:21.670893: Running on_exit tasks
+2024-06-18 13:52:49.987451: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 13:52:49.989459: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 13:52:49.991451: unable to import ptvsd to enable debugging
+2024-06-18 13:52:49.992462: wfastcgi.py 3.0.0 initialized
+2024-06-18 13:55:34.737738: wfastcgi.py exiting because uploadservice\serializers.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 13:55:34.739740: Running on_exit tasks
+2024-06-18 13:56:42.870684: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 13:56:42.871686: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 13:56:42.873682: unable to import ptvsd to enable debugging
+2024-06-18 13:56:42.874679: wfastcgi.py 3.0.0 initialized
+2024-06-18 13:56:47.373760: Error occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+ImportError: cannot import name 'index' from 'uploadservice.views' (C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+ImportError: cannot import name 'index' from 'uploadservice.views' (C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+ImportError: cannot import name 'index' from 'uploadservice.views' (C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+ImportError: cannot import name 'index' from 'uploadservice.views' (C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+ImportError: cannot import name 'index' from 'uploadservice.views' (C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+ImportError: cannot import name 'index' from 'uploadservice.views' (C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+ImportError: cannot import name 'index' from 'uploadservice.views' (C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+ImportError: cannot import name 'index' from 'uploadservice.views' (C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 847, in main
+    result = handler(record.params, response.start)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+ImportError: cannot import name 'index' from 'uploadservice.views' (C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py)
+
+
+StdOut: 
+
+StdErr: 
+2024-06-18 13:59:12.385357: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 13:59:12.389359: Running on_exit tasks
+2024-06-18 13:59:23.167700: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 13:59:23.170694: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 13:59:23.173698: unable to import ptvsd to enable debugging
+2024-06-18 13:59:23.175695: wfastcgi.py 3.0.0 initialized
+2024-06-18 13:59:47.695076: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 13:59:47.699077: Running on_exit tasks
+2024-06-18 13:59:51.804893: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 13:59:51.808877: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 13:59:51.811894: unable to import ptvsd to enable debugging
+2024-06-18 13:59:51.813902: wfastcgi.py 3.0.0 initialized
+2024-06-18 14:05:06.128844: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 14:05:06.133841: Running on_exit tasks
+2024-06-18 14:05:06.137841: wfastcgi.py 3.0.0 closed
+2024-06-18 14:07:12.091869: Error occurred while reading WSGI handler:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 791, in main
+    env, handler = read_wsgi_handler(response.physical_path)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 633, in read_wsgi_handler
+    handler = get_wsgi_handler(os.getenv("WSGI_HANDLER"))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 600, in get_wsgi_handler
+    handler = __import__(module_name, fromlist=[name_list[0][0]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "C:\Python312\Lib\site-packages\django\__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\settings.py", line 133, in <module>
+    MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
+                                              ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'
+
+
+StdOut: 
+
+StdErr: 
+2024-06-18 14:07:12.095875: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 791, in main
+    env, handler = read_wsgi_handler(response.physical_path)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 633, in read_wsgi_handler
+    handler = get_wsgi_handler(os.getenv("WSGI_HANDLER"))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 600, in get_wsgi_handler
+    handler = __import__(module_name, fromlist=[name_list[0][0]])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "C:\Python312\Lib\site-packages\django\__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 89, in __getattr__
+    self._setup(name)
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 76, in _setup
+    self._wrapped = Settings(settings_module)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\conf\__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\settings.py", line 133, in <module>
+    MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
+                                              ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'
+2024-06-18 14:07:12.098876: Running on_exit tasks
+2024-06-18 14:07:12.100874: wfastcgi.py 3.0.0 closed
+2024-06-18 14:07:52.394675: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 14:07:52.397738: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 14:07:52.400666: unable to import ptvsd to enable debugging
+2024-06-18 14:07:52.404657: wfastcgi.py 3.0.0 initialized
+2024-06-18 14:11:17.306814: wfastcgi.py exiting because uploadservice\models.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 14:11:17.311815: Running on_exit tasks
+2024-06-18 14:15:53.017028: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 14:15:53.021028: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 14:15:53.026034: unable to import ptvsd to enable debugging
+2024-06-18 14:15:53.028039: wfastcgi.py 3.0.0 initialized
+2024-06-18 14:15:57.453089: Error occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 847, in main
+    result = handler(record.params, response.start)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+
+StdOut: 
+
+StdErr: 
+2024-06-18 14:16:11.756188: Error occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 847, in main
+    result = handler(record.params, response.start)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 55
+    "uploaded_file_id": uploaded_file_record.id
+                        
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+
+StdOut: 
+
+StdErr: 
+2024-06-18 14:16:27.604256: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 14:16:27.611255: Running on_exit tasks
+2024-06-18 14:16:33.651539: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 14:16:33.659577: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 14:16:33.665536: unable to import ptvsd to enable debugging
+2024-06-18 14:16:33.672536: wfastcgi.py 3.0.0 initialized
+2024-06-18 14:24:07.936064: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 14:24:07.998063: Running on_exit tasks
+2024-06-18 14:24:08.055066: wfastcgi.py 3.0.0 closed
+2024-06-18 14:28:28.500648: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 14:28:28.507651: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 14:28:28.512664: unable to import ptvsd to enable debugging
+2024-06-18 14:28:28.517659: wfastcgi.py 3.0.0 initialized
+2024-06-18 14:29:02.959968: wfastcgi.py exiting because uploadservice\urls.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 14:29:02.965969: Running on_exit tasks
+2024-06-18 14:29:09.580473: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 14:29:09.587471: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 14:29:09.592476: unable to import ptvsd to enable debugging
+2024-06-18 14:29:09.597466: wfastcgi.py 3.0.0 initialized
+2024-06-18 14:31:02.045289: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 14:31:02.051923: Running on_exit tasks
+2024-06-18 14:31:08.466054: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 14:31:08.472038: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 14:31:08.478040: unable to import ptvsd to enable debugging
+2024-06-18 14:31:08.483045: wfastcgi.py 3.0.0 initialized
+2024-06-18 14:31:13.140638: Error occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 17
+    def post(self, request, folder, brand_name, date=None, kind, *args, **kwargs):
+                                                           ^^^^
+SyntaxError: parameter without a default follows parameter with a default
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 17
+    def post(self, request, folder, brand_name, date=None, kind, *args, **kwargs):
+                                                           ^^^^
+SyntaxError: parameter without a default follows parameter with a default
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 17
+    def post(self, request, folder, brand_name, date=None, kind, *args, **kwargs):
+                                                           ^^^^
+SyntaxError: parameter without a default follows parameter with a default
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 17
+    def post(self, request, folder, brand_name, date=None, kind, *args, **kwargs):
+                                                           ^^^^
+SyntaxError: parameter without a default follows parameter with a default
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 17
+    def post(self, request, folder, brand_name, date=None, kind, *args, **kwargs):
+                                                           ^^^^
+SyntaxError: parameter without a default follows parameter with a default
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 17
+    def post(self, request, folder, brand_name, date=None, kind, *args, **kwargs):
+                                                           ^^^^
+SyntaxError: parameter without a default follows parameter with a default
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 17
+    def post(self, request, folder, brand_name, date=None, kind, *args, **kwargs):
+                                                           ^^^^
+SyntaxError: parameter without a default follows parameter with a default
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 17
+    def post(self, request, folder, brand_name, date=None, kind, *args, **kwargs):
+                                                           ^^^^
+SyntaxError: parameter without a default follows parameter with a default
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 847, in main
+    result = handler(record.params, response.start)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\core\handlers\exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 69, in technical_500_response
+    html = reporter.get_traceback_html()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 428, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 411, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\views\debug.py", line 102, in get_caller
+    resolver_match = resolve(request.path)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 686, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 738, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\resolvers.py", line 731, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\rduploadservice\urls.py", line 23, in <module>
+    path('', include('uploadservice.urls')),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\urls.py", line 2, in <module>
+    from .views import FileUploadView, index
+  File "C:\inetpub\rdportal-iisnode\python_server\rduploadservice\uploadservice\views.py", line 17
+    def post(self, request, folder, brand_name, date=None, kind, *args, **kwargs):
+                                                           ^^^^
+SyntaxError: parameter without a default follows parameter with a default
+
+
+StdOut: 
+
+StdErr: 
+2024-06-18 14:32:21.208474: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-18 14:32:21.216476: Running on_exit tasks
+2024-06-18 14:32:28.305576: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 14:32:28.312580: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 14:32:28.318572: unable to import ptvsd to enable debugging
+2024-06-18 14:32:28.325578: wfastcgi.py 3.0.0 initialized
+2024-06-18 14:37:42.577506: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 14:37:42.585507: Running on_exit tasks
+2024-06-18 14:37:42.593508: wfastcgi.py 3.0.0 closed
+2024-06-18 14:41:09.535962: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-18 14:41:09.543946: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-18 14:41:09.552949: unable to import ptvsd to enable debugging
+2024-06-18 14:41:09.559960: wfastcgi.py 3.0.0 initialized
+2024-06-18 15:05:03.498082: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-18 15:05:03.506091: Running on_exit tasks
+2024-06-18 15:05:03.514084: wfastcgi.py 3.0.0 closed
+2024-06-19 09:51:36.320064: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 09:51:36.326073: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 09:51:36.333072: unable to import ptvsd to enable debugging
+2024-06-19 09:51:36.339069: wfastcgi.py 3.0.0 initialized
+2024-06-19 09:56:21.660962: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-19 09:56:21.669948: Running on_exit tasks
+2024-06-19 09:56:28.915018: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 09:56:28.922016: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 09:56:28.927021: unable to import ptvsd to enable debugging
+2024-06-19 09:56:28.935016: wfastcgi.py 3.0.0 initialized
+2024-06-19 09:59:34.627833: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-19 09:59:34.636835: Running on_exit tasks
+2024-06-19 11:32:17.885933: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 11:32:17.899932: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 11:32:17.906938: unable to import ptvsd to enable debugging
+2024-06-19 11:32:17.913933: wfastcgi.py 3.0.0 initialized
+2024-06-19 11:32:52.022885: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-19 11:32:52.029884: Running on_exit tasks
+2024-06-19 11:32:57.109404: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 11:32:57.116393: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 11:32:57.121395: unable to import ptvsd to enable debugging
+2024-06-19 11:32:57.128393: wfastcgi.py 3.0.0 initialized
+2024-06-19 11:33:23.206810: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-19 11:33:23.216809: Running on_exit tasks
+2024-06-19 11:33:26.371869: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 11:33:26.378872: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 11:33:26.384866: unable to import ptvsd to enable debugging
+2024-06-19 11:33:26.390870: wfastcgi.py 3.0.0 initialized
+2024-06-19 11:38:40.580993: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 11:38:40.592996: Running on_exit tasks
+2024-06-19 11:38:40.600002: wfastcgi.py 3.0.0 closed
+2024-06-19 11:58:05.947771: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 11:58:05.953786: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 11:58:05.953786: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 11:58:05.968772: unable to import ptvsd to enable debugging
+2024-06-19 11:58:05.968772: unable to import ptvsd to enable debugging
+2024-06-19 11:58:05.982778: wfastcgi.py 3.0.0 initialized
+2024-06-19 11:58:05.982778: wfastcgi.py 3.0.0 initialized
+2024-06-19 11:58:05.982778: wfastcgi.py 3.0.0 initialized
+2024-06-19 12:03:14.832595: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 12:03:14.847595: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 12:03:14.996601: Running on_exit tasks
+2024-06-19 12:03:14.997602: Running on_exit tasks
+2024-06-19 12:03:15.113601: wfastcgi.py 3.0.0 closed
+2024-06-19 12:03:15.136601: wfastcgi.py 3.0.0 closed
+2024-06-19 12:04:59.732940: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 12:04:59.741928: Running on_exit tasks
+2024-06-19 12:04:59.751932: wfastcgi.py 3.0.0 closed
+2024-06-19 12:06:21.494793: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 12:06:21.504794: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 12:06:21.510795: unable to import ptvsd to enable debugging
+2024-06-19 12:06:21.524791: wfastcgi.py 3.0.0 initialized
+2024-06-19 12:06:59.835230: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-19 12:06:59.843229: Running on_exit tasks
+2024-06-19 12:07:06.585153: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 12:07:06.592149: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 12:07:06.599142: unable to import ptvsd to enable debugging
+2024-06-19 12:07:06.605158: wfastcgi.py 3.0.0 initialized
+2024-06-19 12:10:59.822798: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 12:10:59.836799: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 12:10:59.836799: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 12:10:59.848797: unable to import ptvsd to enable debugging
+etpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 12:10:59.856797: unable to import ptvsd to enable debugging
+2024-06-19 12:10:59.867798: wfastcgi.py 3.0.0 initialized
+2024-06-19 12:13:26.478092: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-19 12:13:26.478092: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-19 12:13:26.492099: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-19 12:13:26.492099: Running on_exit tasks
+2024-06-19 12:13:26.522094: Running on_exit tasks
+2024-06-19 12:16:36.044776: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 12:16:36.053775: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 12:16:36.060779: unable to import ptvsd to enable debugging
+2024-06-19 12:16:36.067776: wfastcgi.py 3.0.0 initialized
+2024-06-19 12:16:36.086777: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 12:16:36.094778: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 12:16:36.102777: unable to import ptvsd to enable debugging
+2024-06-19 12:16:36.110780: wfastcgi.py 3.0.0 initialized
+2024-06-19 12:16:36.132778: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 12:16:36.140790: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 12:16:36.149777: unable to import ptvsd to enable debugging
+2024-06-19 12:16:36.157786: wfastcgi.py 3.0.0 initialized
+2024-06-19 12:24:10.003619: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 12:24:10.003619: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 12:24:10.023621: Running on_exit tasks
+2024-06-19 12:24:10.023621: Running on_exit tasks
+wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 12:24:10.030615: wfastcgi.py 3.0.0 closed
+2024-06-19 12:24:10.030615: wfastcgi.py 3.0.0 closed
+2024-06-19 12:24:10.044611: wfastcgi.py 3.0.0 closed
+2024-06-19 12:40:31.641096: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 12:40:31.647094: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 12:40:31.655103: unable to import ptvsd to enable debugging
+2024-06-19 12:40:31.661100: wfastcgi.py 3.0.0 initialized
+2024-06-19 12:45:45.803900: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 12:45:45.809892: Running on_exit tasks
+2024-06-19 12:45:45.819891: wfastcgi.py 3.0.0 closed
+2024-06-19 14:12:14.463984: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 14:12:14.470962: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 14:12:14.476962: unable to import ptvsd to enable debugging
+2024-06-19 14:12:14.483960: wfastcgi.py 3.0.0 initialized
+2024-06-19 14:13:22.248656: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 14:13:22.258660: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 14:13:22.267659: unable to import ptvsd to enable debugging
+2024-06-19 14:13:22.274658: wfastcgi.py 3.0.0 initialized
+2024-06-19 14:13:32.472247: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 14:13:32.736262: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 14:13:32.744263: unable to import ptvsd to enable debugging
+2024-06-19 14:13:32.752264: wfastcgi.py 3.0.0 initialized
+2024-06-19 14:18:32.538636: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 14:18:32.553631: Running on_exit tasks
+2024-06-19 14:18:32.559627: wfastcgi.py 3.0.0 closed
+2024-06-19 14:18:35.934758: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 14:18:35.940759: Running on_exit tasks
+2024-06-19 14:18:35.941760: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 14:18:35.955759: wfastcgi.py 3.0.0 closed
+2024-06-19 14:18:35.961761: wfastcgi.py 3.0.0 closed
+2024-06-19 14:59:52.431743: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 14:59:52.437752: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 14:59:52.444758: unable to import ptvsd to enable debugging
+2024-06-19 14:59:52.450743: wfastcgi.py 3.0.0 initialized
+2024-06-19 15:00:06.425650: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 15:00:06.434652: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 15:00:06.453652: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 15:00:06.462653: wfastcgi.py 3.0.0 initialized
+e debugging
+2024-06-19 15:00:06.470651: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 15:00:06.470651: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 15:00:06.470651: wfastcgi.py 3.0.0 initialized
+2024-06-19 15:00:06.485653: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 15:00:06.494654: unable to import ptvsd to enable debugging
+2024-06-19 15:00:06.501656: wfastcgi.py 3.0.0 initialized
+2024-06-19 15:00:06.898682: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 15:00:06.909675: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 15:00:06.919675: unable to import ptvsd to enable debugging
+2024-06-19 15:00:06.925689: wfastcgi.py 3.0.0 initialized
+2024-06-19 15:05:20.503780: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 15:05:20.576785: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 15:05:20.576785: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 15:05:20.576785: Running on_exit tasks
+2024-06-19 15:05:20.621786: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 15:05:20.621786: Running on_exit tasks
+2024-06-19 15:05:20.621786: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 15:05:20.649786: Running on_exit tasks
+2024-06-19 15:05:20.651787: wfastcgi.py 3.0.0 closed
+2024-06-19 15:05:20.672788: Running on_exit tasks
+2024-06-19 15:05:20.715792: wfastcgi.py 3.0.0 closed
+2024-06-19 15:05:21.001805: Running on_exit tasks
+2024-06-19 15:05:21.031805: wfastcgi.py 3.0.0 closed
+2024-06-19 15:05:21.266821: wfastcgi.py 3.0.0 closed
+2024-06-19 15:05:21.279819: wfastcgi.py 3.0.0 closed
+2024-06-19 15:05:38.404696: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 15:05:38.412692: Running on_exit tasks
+2024-06-19 15:05:38.426694: wfastcgi.py 3.0.0 closed
+2024-06-19 16:02:40.064636: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:02:40.072637: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:02:40.080636: unable to import ptvsd to enable debugging
+2024-06-19 16:02:40.088643: wfastcgi.py 3.0.0 initialized
+2024-06-19 16:02:46.815613: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:02:46.825614: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:02:46.892614: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:02:46.893617: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:02:46.908614: unable to import ptvsd to enable debugging
+2024-06-19 16:02:46.908614: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:02:46.921617: wfastcgi.py 3.0.0 initialized
+iles in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:02:46.922616: unable to import ptvsd to enable debugging
+2024-06-19 16:02:46.942617: wfastcgi.py 3.0.0 initialized
+e debugging
+2024-06-19 16:02:47.081623: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:02:47.089620: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:02:47.098620: unable to import ptvsd to enable debugging
+2024-06-19 16:02:47.104621: wfastcgi.py 3.0.0 initialized
+2024-06-19 16:02:47.330628: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:02:47.339629: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:02:47.346636: unable to import ptvsd to enable debugging
+2024-06-19 16:02:47.352628: wfastcgi.py 3.0.0 initialized
+2024-06-19 16:07:51.841064: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:07:51.848021: Running on_exit tasks
+2024-06-19 16:07:51.854026: wfastcgi.py 3.0.0 closed
+2024-06-19 16:08:00.833342: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:08:00.840333: Running on_exit tasks
+2024-06-19 16:08:00.840333: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:08:00.840333: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:08:00.859344: wfastcgi.py 3.0.0 closed
+2024-06-19 16:08:00.859344: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:08:00.879334: Running on_exit tasks
+d
+2024-06-19 16:08:00.879334: wfastcgi.py 3.0.0 closed
+2024-06-19 16:08:00.888342: wfastcgi.py 3.0.0 closed
+2024-06-19 16:09:05.746672: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:09:05.794674: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:09:05.801675: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:09:05.803673: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:09:05.816724: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:09:05.816724: unable to import ptvsd to enable debugging
+2024-06-19 16:09:05.816724: unable to import ptvsd to enable debugging
+2024-06-19 16:09:05.838679: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:09:05.838679: wfastcgi.py 3.0.0 initialized
+2024-06-19 16:09:05.838679: wfastcgi.py 3.0.0 initialized
+2024-06-19 16:09:05.846706: unable to import ptvsd to enable debugging
+2024-06-19 16:09:05.957679: wfastcgi.py 3.0.0 initialized
+2024-06-19 16:09:05.957679: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:09:05.999680: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:09:06.007679: unable to import ptvsd to enable debugging
+2024-06-19 16:09:06.015679: wfastcgi.py 3.0.0 initialized
+2024-06-19 16:09:06.059680: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-19 16:09:06.066680: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-19 16:09:06.074680: unable to import ptvsd to enable debugging
+2024-06-19 16:09:06.081680: wfastcgi.py 3.0.0 initialized
+2024-06-19 16:14:19.842598: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:14:19.852596: Running on_exit tasks
+2024-06-19 16:14:19.861590: wfastcgi.py 3.0.0 closed
+2024-06-19 16:14:19.887589: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:14:19.887589: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:14:19.907590: Running on_exit tasks
+2024-06-19 16:14:19.907590: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:14:19.907590: Running on_exit tasks
+2024-06-19 16:14:19.934593: wfastcgi.py 3.0.0 closed
+2024-06-19 16:14:19.934593: Running on_exit tasks
+2024-06-19 16:14:19.935591: wfastcgi.py 3.0.0 closed
+2024-06-19 16:14:20.044593: wfastcgi.py 3.0.0 closed
+2024-06-19 16:14:20.091596: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:14:20.105599: Running on_exit tasks
+2024-06-19 16:14:20.117594: wfastcgi.py 3.0.0 closed
+2024-06-19 16:14:25.864615: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-19 16:14:25.875614: Running on_exit tasks
+2024-06-19 16:14:25.884601: wfastcgi.py 3.0.0 closed
+2024-06-20 09:03:06.356702: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-20 09:03:06.370710: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-20 09:03:06.377710: unable to import ptvsd to enable debugging
+2024-06-20 09:03:06.384711: wfastcgi.py 3.0.0 initialized
+2024-06-20 09:08:19.131266: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-20 09:08:19.141254: Running on_exit tasks
+2024-06-20 09:08:19.151256: wfastcgi.py 3.0.0 closed
+2024-06-20 14:31:43.453026: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-20 14:31:43.461032: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-20 14:31:43.469032: unable to import ptvsd to enable debugging
+2024-06-20 14:31:43.475036: wfastcgi.py 3.0.0 initialized
+2024-06-20 14:40:59.792814: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-20 14:40:59.802822: Running on_exit tasks
+2024-06-20 14:40:59.813819: wfastcgi.py 3.0.0 closed
+2024-06-20 14:41:14.571470: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-20 14:41:14.578448: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-20 14:41:14.585449: unable to import ptvsd to enable debugging
+2024-06-20 14:41:14.591465: wfastcgi.py 3.0.0 initialized
+2024-06-20 14:41:22.986903: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-20 14:41:23.005903: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-20 14:41:23.005903: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-20 14:41:23.022904: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-20 14:41:23.022904: unable to import ptvsd to enable debugging
+2024-06-20 14:41:23.031904: unable to import ptvsd to enable debugging
+2024-06-20 14:41:23.031904: wfastcgi.py 3.0.0 initialized
+2024-06-20 14:41:23.039902: wfastcgi.py 3.0.0 initialized
+2024-06-20 14:41:23.178907: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-20 14:41:23.186908: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-20 14:41:23.194907: unable to import ptvsd to enable debugging
+2024-06-20 14:41:23.202907: wfastcgi.py 3.0.0 initialized
+2024-06-20 14:41:23.280910: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-20 14:41:23.287909: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-20 14:41:23.294918: unable to import ptvsd to enable debugging
+2024-06-20 14:41:23.294918: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-20 14:41:23.301914: wfastcgi.py 3.0.0 initialized
+iles in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-20 14:41:23.308920: unable to import ptvsd to enable debugging
+2024-06-20 14:41:23.315910: wfastcgi.py 3.0.0 initialized
+2024-06-20 14:45:25.069023: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-20 14:45:25.069023: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-20 14:45:25.085030: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-20 14:45:25.085030: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-20 14:45:25.085030: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-20 14:45:25.085030: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-20 14:45:25.107038: Running on_exit tasks
+2024-06-20 14:45:25.107038: Running on_exit tasks
+2024-06-20 14:45:25.108026: Running on_exit tasks
+2024-06-20 14:45:25.108026: Running on_exit tasks
+2024-06-20 14:45:25.139026: Running on_exit tasks
+2024-06-20 14:45:38.498408: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-20 14:45:38.506401: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-20 14:45:38.514411: unable to import ptvsd to enable debugging
+2024-06-20 14:45:38.520418: wfastcgi.py 3.0.0 initialized
+2024-06-20 14:52:02.739512: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-20 14:52:02.746500: Running on_exit tasks
+2024-06-20 14:52:02.753501: wfastcgi.py 3.0.0 closed
+2024-06-21 11:01:25.418776: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-21 11:01:25.428778: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-21 11:01:25.437780: unable to import ptvsd to enable debugging
+2024-06-21 11:01:25.447771: wfastcgi.py 3.0.0 initialized
+2024-06-21 11:06:36.465908: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-21 11:06:36.473905: Running on_exit tasks
+2024-06-21 11:06:36.482904: wfastcgi.py 3.0.0 closed

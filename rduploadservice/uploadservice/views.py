@@ -15,8 +15,6 @@ from django.http import HttpRequest, JsonResponse
 from django.contrib.auth.models import User
 import os
 
-
-
 from django.contrib.auth import authenticate
 
 def index(request):
@@ -78,9 +76,12 @@ class FileUploadView(APIView):
 class LoginView(APIView):
     def post(self, request: HttpRequest) -> JsonResponse:
         user: Union[User, None] = authenticate(request) # type: ignore
+        print(user)
         if user is not None and isinstance(user, User):
             refresh = RefreshToken.for_user(user)
             access_token = refresh.token
+            
+            print(access_token)
 
             return JsonResponse({
                 'refresh': str(refresh),
