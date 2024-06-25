@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-8$j=u)jo!srkxm=6&(dp95gg20x#*bwfe@r5w)uf!r387v9ser
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rd.weiman.com']
+ALLOWED_HOSTS = ['rd.weiman.com', 'uploads.purposebuiltbrands.com']
 
 
 # Application definition
