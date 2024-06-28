@@ -1,12 +1,17 @@
+from datetime import datetime
 from typing import Dict, Any, List, Union
-from django.shortcuts import render 
+from django.shortcuts import render
+import jwt
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.parsers import MultiPartParser, FormParser
-from django.contrib.auth import authenticate
+from rest_framework.permissions import AllowAny
+from django.contrib.auth import authenticate, login
 from django.conf import settings
+
+from uploadservice.backends import WindowsAuthenticationBackend
 from .serializers import FileSerializer
 from .models import UploadedFile
 from django.core.files.storage import default_storage
@@ -14,16 +19,17 @@ from django.core.files.base import ContentFile
 from django.http import HttpRequest, JsonResponse
 from django.contrib.auth.models import User
 import os
+import logging
 
-from django.contrib.auth import authenticate
+logger = logging.getLogger(__name__)
 
 def index(request):
+    print(request)
     return render(request, 'uploadservice/index.html')
 
 class FileUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
-    
     def post(self, request: HttpRequest, folder: str, brand_name: str, kind: str, date: str = '') -> JsonResponse:
         if not request.FILES:
             return JsonResponse({"error": "No files uploaded."}, status=status.HTTP_400_BAD_REQUEST)
@@ -63,7 +69,7 @@ class FileUploadView(APIView):
             uploaded_file_record.save()
 
             uploaded_files_info.append({
-                "uploaded_file_id": uploaded_file_record.id,  
+                "uploaded_file_id": uploaded_file_record.id,
                 "file_path": uploaded_file_record.filepath
             })
 
@@ -71,17 +77,14 @@ class FileUploadView(APIView):
             "message": "Files uploaded successfully",
             "uploaded_files": uploaded_files_info
         }, status=status.HTTP_201_CREATED)
-        
-        
+
 class LoginView(APIView):
     def post(self, request: HttpRequest) -> JsonResponse:
         user: Union[User, None] = authenticate(request) # type: ignore
         print(user)
         if user is not None and isinstance(user, User):
             refresh = RefreshToken.for_user(user)
-            access_token = refresh.token
-            
-            print(access_token)
+            access_token = refresh.access_token # type: ignore
 
             return JsonResponse({
                 'refresh': str(refresh),
@@ -92,4 +95,22 @@ class LoginView(APIView):
             })
         else:
             return JsonResponse({'error': 'Authentication failed'}, status=status.HTTP_401_UNAUTHORIZED)
-   
+
+class ObtainJWTView(APIView):
+    permission_classes = (AllowAny,)
+
+    def post(self, request, *args, **kwargs):
+        username = request.data.get('username')
+        password = request.data.get('password')
+        user = authenticate(request, remote_user=f'DOMAIN\\{username}')  # Adjust if needed
+        print(user)
+        
+        if user is not None:
+            payload = {
+                'user_id': user.id, # type: ignore
+                'username': user.username, # type: ignore
+                'exp': datetime.utcnow() + settings.SIMPLE_JWT['ACCESS_TOKEN_LIFETIME']
+            }
+            token = jwt.encode(payload, settings.SECRET_KEY, algorithm='HS256')
+            return Response({'token': token})
+        return Response({'error': 'Invalid credentials'}, status=400)

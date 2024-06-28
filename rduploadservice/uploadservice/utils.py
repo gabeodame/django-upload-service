@@ -1,25 +1,13 @@
-
-import win32com.client
-
-def get_user_info(username):
+def get_user_info(remote_user):
     user_info = {}
     try:
-        # Connect to the Active Directory
-        ad = win32com.client.Dispatch('ADsNameSpaces')
-        ldap = ad.GetObject('', 'LDAP:')
-        conn = ldap.OpenDSObject(
-            'LDAP://DC=herbertstanley,DC=com',  # Replace with your actual domain
-            None,
-            None,
-            0
-        )
-        
-        # Search for the user in Active Directory
-        user = conn.GetObject('', f'LDAP://CN={username},OU=Users,DC=herbertstanley,DC=com')  # Adjust the path based on your AD structure
+        # Split domain and username
+        domain, username = remote_user.split('\\')
+
         user_info['username'] = username
-        user_info['full_name'] = user.Get('displayName')
-        user_info['email'] = user.Get('mail')
-        user_info['department'] = user.Get('department')
+        user_info['full_name'] = username  # Since full name is not available from REMOTE_USER, use username as placeholder
+        user_info['email'] = f'{username}@{domain}.com'  # Placeholder email construction
+        user_info['department'] = 'Unknown'  # Placeholder, as department info is not available
     except Exception as e:
         print(f'Error retrieving user info: {e}')
     

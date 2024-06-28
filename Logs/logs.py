@@ -3914,3 +3914,552 @@ ModuleNotFoundError: No module named 'applicationinsights'
 OSError: [Errno 22] Invalid argument
 2024-06-21 11:06:36.473905: Running on_exit tasks
 2024-06-21 11:06:36.482904: wfastcgi.py 3.0.0 closed
+2024-06-21 11:47:00.074230: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-21 11:47:00.086221: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-21 11:47:00.094221: unable to import ptvsd to enable debugging
+2024-06-21 11:47:00.103237: wfastcgi.py 3.0.0 initialized
+2024-06-21 11:53:21.928028: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-21 11:53:21.935037: Running on_exit tasks
+2024-06-21 11:53:21.942023: wfastcgi.py 3.0.0 closed
+2024-06-24 11:49:26.102530: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-24 11:49:26.109567: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-24 11:49:26.116533: unable to import ptvsd to enable debugging
+2024-06-24 11:49:26.124532: wfastcgi.py 3.0.0 initialized
+2024-06-24 11:54:38.777393: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-24 11:54:38.787399: Running on_exit tasks
+2024-06-24 11:54:38.794402: wfastcgi.py 3.0.0 closed
+2024-06-24 13:54:10.063184: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-24 13:54:10.071183: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-24 13:54:10.081179: unable to import ptvsd to enable debugging
+2024-06-24 13:54:10.089244: wfastcgi.py 3.0.0 initialized
+2024-06-24 14:29:41.825670: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-24 14:29:41.835675: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-24 14:29:41.843665: unable to import ptvsd to enable debugging
+2024-06-24 14:29:41.850679: wfastcgi.py 3.0.0 initialized
+2024-06-24 14:34:53.122732: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-24 14:34:53.129748: Running on_exit tasks
+2024-06-24 14:34:53.137730: wfastcgi.py 3.0.0 closed
+2024-06-25 07:00:55.656790: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 07:00:55.664797: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 07:00:55.671806: unable to import ptvsd to enable debugging
+2024-06-25 07:00:55.678810: wfastcgi.py 3.0.0 initialized
+2024-06-25 07:07:53.621846: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 07:07:53.629833: Running on_exit tasks
+2024-06-25 07:07:53.636838: wfastcgi.py 3.0.0 closed
+2024-06-25 07:40:52.942151: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 07:40:52.950167: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 07:40:52.961153: unable to import ptvsd to enable debugging
+2024-06-25 07:40:52.968157: wfastcgi.py 3.0.0 initialized
+2024-06-25 07:46:03.396147: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 07:46:03.403154: Running on_exit tasks
+2024-06-25 07:46:03.410153: wfastcgi.py 3.0.0 closed
+2024-06-25 08:33:45.890236: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 08:33:45.897243: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 08:33:45.905248: unable to import ptvsd to enable debugging
+2024-06-25 08:33:45.913239: wfastcgi.py 3.0.0 initialized
+2024-06-25 08:35:19.141925: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 08:35:19.149858: Running on_exit tasks
+2024-06-25 08:35:24.094638: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 08:35:24.105701: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 08:35:24.114648: unable to import ptvsd to enable debugging
+2024-06-25 08:35:24.124642: wfastcgi.py 3.0.0 initialized
+2024-06-25 08:52:14.153796: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 08:52:14.153796: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 08:52:14.175803: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 08:52:14.183858: unable to import ptvsd to enable debugging
+2024-06-25 08:52:14.183858: unable to import ptvsd to enable debugging
+2024-06-25 08:52:14.200805: wfastcgi.py 3.0.0 initialized
+2024-06-25 08:57:25.127117: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 08:57:25.137122: Running on_exit tasks
+2024-06-25 08:57:25.137122: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 08:57:25.137122: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 08:57:25.155117: Running on_exit tasks
+2024-06-25 08:57:25.156116: wfastcgi.py 3.0.0 closed
+2024-06-25 08:57:25.173114: Running on_exit tasks
+d
+2024-06-25 08:57:25.182112: wfastcgi.py 3.0.0 closed
+2024-06-25 09:19:56.706977: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 09:19:56.714983: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 09:19:56.723977: unable to import ptvsd to enable debugging
+2024-06-25 09:19:56.730989: wfastcgi.py 3.0.0 initialized
+2024-06-25 09:25:10.869465: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 09:25:10.877497: Running on_exit tasks
+2024-06-25 09:25:10.886457: wfastcgi.py 3.0.0 closed
+2024-06-25 09:41:24.681361: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 09:41:24.694359: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 09:41:24.703358: unable to import ptvsd to enable debugging
+2024-06-25 09:41:24.715358: wfastcgi.py 3.0.0 initialized
+2024-06-25 09:46:38.863062: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 09:46:38.870067: Running on_exit tasks
+2024-06-25 09:46:38.877054: wfastcgi.py 3.0.0 closed
+2024-06-25 10:18:07.804210: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 10:18:07.825275: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 10:18:07.834258: unable to import ptvsd to enable debugging
+2024-06-25 10:18:07.845277: wfastcgi.py 3.0.0 initialized
+2024-06-25 10:23:21.927514: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 10:23:21.937504: Running on_exit tasks
+2024-06-25 10:23:21.944504: wfastcgi.py 3.0.0 closed
+2024-06-25 10:39:29.446821: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 10:39:29.454820: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 10:39:29.462825: unable to import ptvsd to enable debugging
+2024-06-25 10:39:29.470897: wfastcgi.py 3.0.0 initialized
+2024-06-25 10:43:20.344996: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 10:43:20.356000: Running on_exit tasks
+2024-06-25 10:43:50.899220: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 10:43:50.907215: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 10:43:50.915217: unable to import ptvsd to enable debugging
+2024-06-25 10:43:50.922209: wfastcgi.py 3.0.0 initialized
+2024-06-25 10:50:15.108628: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 10:50:15.117625: Running on_exit tasks
+2024-06-25 10:50:15.125627: wfastcgi.py 3.0.0 closed
+2024-06-25 11:39:40.996969: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 11:39:41.005972: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 11:39:41.013974: unable to import ptvsd to enable debugging
+2024-06-25 11:39:41.021970: wfastcgi.py 3.0.0 initialized
+2024-06-25 11:44:55.131774: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 11:44:55.141764: Running on_exit tasks
+2024-06-25 11:44:55.150765: wfastcgi.py 3.0.0 closed
+2024-06-25 11:59:24.882456: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 11:59:24.891454: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 11:59:24.899457: unable to import ptvsd to enable debugging
+2024-06-25 11:59:24.907459: wfastcgi.py 3.0.0 initialized
+2024-06-25 11:59:41.607399: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 11:59:41.616400: Running on_exit tasks
+2024-06-25 11:59:46.117183: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 11:59:46.125178: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 11:59:46.133185: unable to import ptvsd to enable debugging
+2024-06-25 11:59:46.141179: wfastcgi.py 3.0.0 initialized
+2024-06-25 12:01:13.281039: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 12:01:13.290038: Running on_exit tasks
+2024-06-25 12:11:58.342146: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 12:11:58.350132: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 12:11:58.358211: unable to import ptvsd to enable debugging
+2024-06-25 12:11:58.365139: wfastcgi.py 3.0.0 initialized
+2024-06-25 12:13:03.473223: wfastcgi.py exiting because uploadservice\backends.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 12:13:03.484222: Running on_exit tasks
+2024-06-25 12:13:08.673685: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 12:13:08.682697: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 12:13:08.690684: unable to import ptvsd to enable debugging
+2024-06-25 12:13:08.699709: wfastcgi.py 3.0.0 initialized
+2024-06-25 12:13:47.536336: wfastcgi.py exiting because uploadservice\backends.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 12:13:47.549338: Running on_exit tasks
+2024-06-25 12:14:01.384850: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 12:14:01.393851: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 12:14:01.404859: unable to import ptvsd to enable debugging
+2024-06-25 12:14:01.413948: wfastcgi.py 3.0.0 initialized
+2024-06-25 12:18:38.845811: wfastcgi.py exiting because uploadservice\backends.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 12:18:38.856811: Running on_exit tasks
+2024-06-25 12:35:37.291970: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 12:35:37.299977: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 12:35:37.307972: unable to import ptvsd to enable debugging
+2024-06-25 12:35:37.314972: wfastcgi.py 3.0.0 initialized
+2024-06-25 12:36:20.615690: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 12:36:20.661691: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 12:36:20.661691: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 12:36:20.671691: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 12:36:20.694692: unable to import ptvsd to enable debugging
+2024-06-25 12:36:20.694692: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 12:36:20.711693: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 12:36:20.711693: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 12:36:20.711693: wfastcgi.py 3.0.0 initialized
+2024-06-25 12:36:20.711693: unable to import ptvsd to enable debugging
+2024-06-25 12:36:20.740692: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 12:36:20.742694: wfastcgi.py 3.0.0 initialized
+2024-06-25 12:36:20.760695: wfastcgi.py 3.0.0 initialized
+2024-06-25 12:36:20.763693: unable to import ptvsd to enable debugging
+2024-06-25 12:36:20.798694: wfastcgi.py 3.0.0 initialized
+2024-06-25 12:36:20.963697: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 12:36:20.972698: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 12:36:20.982699: unable to import ptvsd to enable debugging
+2024-06-25 12:36:20.992698: wfastcgi.py 3.0.0 initialized
+2024-06-25 12:41:34.719652: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 12:41:34.729653: Running on_exit tasks
+2024-06-25 12:41:34.729653: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 12:41:34.729653: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 12:41:34.755656: wfastcgi.py 3.0.0 closed
+2024-06-25 12:41:34.755656: Running on_exit tasks
+2024-06-25 12:41:34.755656: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 12:41:34.756647: Running on_exit tasks
+2024-06-25 12:41:34.799655: wfastcgi.py 3.0.0 closed
+2024-06-25 12:41:34.799655: Running on_exit tasks
+2024-06-25 12:41:34.800652: wfastcgi.py 3.0.0 closed
+2024-06-25 12:41:34.916651: wfastcgi.py 3.0.0 closed
+2024-06-25 12:42:01.514575: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 12:42:01.522570: Running on_exit tasks
+2024-06-25 12:42:01.531568: wfastcgi.py 3.0.0 closed
+2024-06-25 13:10:09.370975: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 13:10:09.380967: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 13:10:09.389965: unable to import ptvsd to enable debugging
+2024-06-25 13:10:09.401981: wfastcgi.py 3.0.0 initialized
+2024-06-25 13:10:10.857987: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 13:10:10.871988: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 13:10:10.871988: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 13:10:10.895987: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 13:10:10.895987: unable to import ptvsd to enable debugging
+2024-06-25 13:10:10.909988: unable to import ptvsd to enable debugging
+2024-06-25 13:10:10.919988: wfastcgi.py 3.0.0 initialized
+2024-06-25 13:10:11.067989: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 13:10:11.080988: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 13:10:11.090988: unable to import ptvsd to enable debugging
+2024-06-25 13:10:11.100988: wfastcgi.py 3.0.0 initialized
+2024-06-25 13:10:11.202990: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 13:10:11.214992: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 13:10:11.226991: unable to import ptvsd to enable debugging
+2024-06-25 13:10:11.234989: wfastcgi.py 3.0.0 initialized
+2024-06-25 13:10:11.403994: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 13:10:11.435995: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 13:10:11.450994: unable to import ptvsd to enable debugging
+2024-06-25 13:10:11.465995: wfastcgi.py 3.0.0 initialized
+2024-06-25 13:12:46.880194: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 13:12:46.880194: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 13:12:46.902204: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 13:12:46.903195: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 13:12:46.925201: Running on_exit tasks
+2024-06-25 13:12:46.925201: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 13:12:46.954195: Running on_exit tasks
+2024-06-25 13:12:46.955200: Running on_exit tasks
+2024-06-25 13:12:46.981194: Running on_exit tasks
+2024-06-25 13:12:46.981194: Running on_exit tasks
+2024-06-25 13:15:12.923978: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 13:15:12.932975: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 13:15:12.942017: unable to import ptvsd to enable debugging
+2024-06-25 13:15:12.950971: wfastcgi.py 3.0.0 initialized
+2024-06-25 13:21:37.090104: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 13:21:37.099109: Running on_exit tasks
+2024-06-25 13:21:37.107111: wfastcgi.py 3.0.0 closed
+2024-06-25 13:46:19.953393: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 13:46:19.962390: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 13:46:19.970391: unable to import ptvsd to enable debugging
+2024-06-25 13:46:19.979405: wfastcgi.py 3.0.0 initialized
+2024-06-25 13:46:36.537470: wfastcgi.py exiting because uploadservice\views.py has changed, matching .*((\.py)|(\.config))$
+2024-06-25 13:46:36.546464: Running on_exit tasks
+2024-06-25 13:47:03.200744: Failed to import applicationinsights: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
+    from applicationinsights.requests import WSGIApplication
+ModuleNotFoundError: No module named 'applicationinsights'
+2024-06-25 13:47:03.208739: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 13:47:03.215743: unable to import ptvsd to enable debugging
+2024-06-25 13:47:03.223739: wfastcgi.py 3.0.0 initialized
+2024-06-25 13:52:52.486603: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-25 13:52:52.495600: Running on_exit tasks
+2024-06-25 13:52:52.503602: wfastcgi.py 3.0.0 closed
+2024-06-25 15:13:51.378706: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 15:13:51.415717: unable to import ptvsd to enable debugging
+2024-06-25 15:13:51.424704: wfastcgi.py 3.0.0 initialized
+2024-06-25 15:19:05.444620: Running on_exit tasks
+2024-06-25 15:21:27.453989: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-25 15:21:27.488981: unable to import ptvsd to enable debugging
+2024-06-25 15:21:27.499144: wfastcgi.py 3.0.0 initialized
+2024-06-25 15:26:41.555197: Running on_exit tasks
+2024-06-25 15:26:41.556189: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-28 06:48:45.189802: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 06:48:45.213805: unable to import ptvsd to enable debugging
+2024-06-28 06:48:45.226807: wfastcgi.py 3.0.0 initialized
+2024-06-28 06:53:53.918443: Running on_exit tasks
+2024-06-28 06:53:53.919445: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-06-28 07:40:29.364079: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 07:40:29.379078: unable to import ptvsd to enable debugging
+2024-06-28 07:40:29.381080: unable to import ptvsd to enable debugging
+2024-06-28 07:40:29.427081: wfastcgi.py 3.0.0 initialized
+2024-06-28 07:40:29.452087: wfastcgi.py 3.0.0 initialized
+2024-06-28 07:40:29.453084: wfastcgi.py 3.0.0 initialized
+2024-06-28 07:41:29.200756: wfastcgi.py exiting because rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-28 07:41:29.212768: Running on_exit tasks
+ause rduploadservice\settings.py has changed, matching .*((\.py)|(\.config))$
+2024-06-28 07:41:29.232754: Running on_exit tasks
+2024-06-28 07:41:29.233752: Running on_exit tasks
+2024-06-28 07:42:08.863632: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 07:42:08.885633: unable to import ptvsd to enable debugging
+2024-06-28 07:42:08.890630: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 07:42:08.937634: wfastcgi.py 3.0.0 initialized
+e debugging
+2024-06-28 07:42:08.939636: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 07:42:08.958634: wfastcgi.py 3.0.0 initialized
+e debugging
+2024-06-28 07:42:08.975635: wfastcgi.py 3.0.0 initialized
+2024-06-28 07:42:45.213671: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-28 07:42:45.216740: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-28 07:42:45.251668: Running on_exit tasks
+ause web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-28 07:42:45.280676: Running on_exit tasks
+2024-06-28 07:45:54.046462: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 07:45:54.047462: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 07:45:54.078464: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 07:45:54.095458: unable to import ptvsd to enable debugging
+2024-06-28 07:45:54.108456: wfastcgi.py 3.0.0 initialized
+2024-06-28 07:45:54.108456: unable to import ptvsd to enable debugging
+2024-06-28 07:45:54.122457: wfastcgi.py 3.0.0 initialized
+2024-06-28 07:45:54.134456: unable to import ptvsd to enable debugging
+2024-06-28 07:45:54.150458: wfastcgi.py 3.0.0 initialized
+2024-06-28 07:46:18.268391: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-28 07:46:18.279385: wfastcgi.py exiting because web.config has changed, matching .*((\.py)|(\.config))$
+2024-06-28 07:46:18.279385: Running on_exit tasks
+2024-06-28 07:46:18.291385: Running on_exit tasks
+2024-06-28 07:46:18.292385: Running on_exit tasks
+2024-06-28 07:47:12.631363: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 07:47:12.633360: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 07:47:12.669360: unable to import ptvsd to enable debugging
+2024-06-28 07:47:12.681361: unable to import ptvsd to enable debugging
+2024-06-28 07:47:12.690369: wfastcgi.py 3.0.0 initialized
+2024-06-28 07:47:12.690369: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-06-28 07:47:12.735358: unable to import ptvsd to enable debugging
+2024-06-28 07:47:12.745367: wfastcgi.py 3.0.0 initialized
