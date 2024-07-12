@@ -1,4 +1,6 @@
 from datetime import datetime
+from io import BytesIO
+import json
 from typing import Dict, Any, List, Union
 from django.shortcuts import render
 import jwt
@@ -7,7 +9,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.contrib.auth import authenticate, login
 from django.conf import settings
 
@@ -27,8 +29,33 @@ def index(request):
     print(request)
     return render(request, 'uploadservice/index.html')
 
+
+#IIS Debug
+def print_meta(request):
+    def serialize_meta_value(value):
+        if isinstance(value, bytes):
+            return value.decode('utf-8', errors='ignore')
+        elif isinstance(value, BytesIO):
+            return value.getvalue().decode('utf-8', errors='ignore')
+        else:
+            try:
+                json.dumps(value)
+                return value
+            except (TypeError, OverflowError):
+                return str(value)
+
+    meta_dict = {k: serialize_meta_value(v) for k, v in request.META.items()}
+    
+    # Write meta_dict to a file
+    with open('meta_info.json', 'w') as f:
+        json.dump(meta_dict, f, indent=4)
+    
+    return JsonResponse(meta_dict)
+
 class FileUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)
+    permission_classes = [IsAuthenticated]
+    
 
     def post(self, request: HttpRequest, folder: str, brand_name: str, kind: str, date: str = '') -> JsonResponse:
         if not request.FILES:
@@ -77,14 +104,17 @@ class FileUploadView(APIView):
             "message": "Files uploaded successfully",
             "uploaded_files": uploaded_files_info
         }, status=status.HTTP_201_CREATED)
+      
 
 class LoginView(APIView):
     def post(self, request: HttpRequest) -> JsonResponse:
-        user: Union[User, None] = authenticate(request) # type: ignore
-        print(user)
+        user = authenticate(request, remote_user=request.META.get('REMOTE_USER'))
         if user is not None and isinstance(user, User):
             refresh = RefreshToken.for_user(user)
             access_token = refresh.access_token # type: ignore
+            
+            logger.info(access_token)
+            print(access_token)
 
             return JsonResponse({
                 'refresh': str(refresh),
@@ -97,20 +127,22 @@ class LoginView(APIView):
             return JsonResponse({'error': 'Authentication failed'}, status=status.HTTP_401_UNAUTHORIZED)
 
 class ObtainJWTView(APIView):
-    permission_classes = (AllowAny,)
-
     def post(self, request, *args, **kwargs):
         username = request.data.get('username')
-        password = request.data.get('password')
-        user = authenticate(request, remote_user=f'DOMAIN\\{username}')  # Adjust if needed
-        print(user)
-        
+        user = authenticate(request, remote_user=username)  # Use Windows Authentication
+
         if user is not None:
-            payload = {
-                'user_id': user.id, # type: ignore
+            refresh = RefreshToken.for_user(user)
+            access_token = refresh.access_token # type: ignore
+            
+            logger.info(access_token)
+            print(access_token)
+
+            return Response({
+                'refresh': str(refresh),
+                'access': str(access_token),
                 'username': user.username, # type: ignore
-                'exp': datetime.utcnow() + settings.SIMPLE_JWT['ACCESS_TOKEN_LIFETIME']
-            }
-            token = jwt.encode(payload, settings.SECRET_KEY, algorithm='HS256')
-            return Response({'token': token})
-        return Response({'error': 'Invalid credentials'}, status=400)
+                'full_name': f'{user.first_name} {user.last_name}', # type: ignore
+                'email': user.email, # type: ignore
+            })
+        return Response({'error': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)

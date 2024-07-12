@@ -5,9 +5,16 @@ from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-8$j=u)jo!srkxm=6&(dp95gg20x#*bwfe@r5w)uf!r387v9ser'
+SECRET_KEY = config('SECRET_KEY')
+JWT_SIGNING_KEY = config('JWT_SIGNING_KEY')
 
-DEBUG = True
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_TZ = True
+
+# Use environment variable to set DEBUG
+DEBUG = str(config('DJANGO_DEBUG', default='true')).lower() == 'true'
 
 ALLOWED_HOSTS = ['rd.weiman.com', 'uploads.purposebuiltbrands.com', '127.0.0.1', 'localhost']
 
@@ -31,25 +38,39 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=360),  # Adjust to 30 minutes
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),     # Adjust to 7 days
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': JWT_SIGNING_KEY,
+    'VERIFYING_KEY': None,
+    'AUDIENCE': None,
+    'ISSUER': None,
     'AUTH_HEADER_TYPES': ('Bearer',),
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',
+    'JTI_CLAIM': 'jti',
 }
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 AUTHENTICATION_BACKENDS = [
     'uploadservice.backends.WindowsAuthenticationBackend',  # custom backend
     'django.contrib.auth.backends.RemoteUserBackend',
+     'django.contrib.auth.backends.ModelBackend',
 ]
 
 LOGIN_URL = '/admin/login/'
@@ -107,10 +128,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
@@ -122,8 +139,9 @@ APPEND_SLASH = True
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
     'https://rd.purposebuiltbrands.com',
-    'https://rd.purposebuiltbrands.com/'
-    'rd.purposebuiltbrands.com'
+    'https://rd.purposebuiltbrands.com/',
+    'rd.purposebuiltbrands.com',
+    'rd.purposebuiltbrands.com/'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -148,3 +166,6 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+
+
+# curl -H "Authorization: Bearer <your_access_token>" http://localhost:8000/api/some-endpoint/
