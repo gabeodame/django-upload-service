@@ -1,12 +1,13 @@
 # urls.py
 
 from django.urls import path
-from .views import FileUploadView, index, LoginView, ObtainJWTView, print_meta
+from .views import FileUploadView, cors_preflight_view, index, LoginView, ObtainJWTView, print_meta
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
-      path('print-meta/', print_meta),
+    path('print-meta/', print_meta),
     path('', index, name='home-page'),
+    path('preflight/', cors_preflight_view, name='home-page'),
     path('uploads/<str:folder>/<str:brand_name>/<str:kind>/', FileUploadView.as_view(), name='file-upload-without-date'),
     path('uploads/<str:folder>/<str:brand_name>/<str:date>/<str:kind>/', FileUploadView.as_view(), name='file-upload'),
     path('api/login/', LoginView.as_view(), name='login'),

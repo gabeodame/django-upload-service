@@ -29,6 +29,13 @@ def index(request):
     print(request)
     return render(request, 'uploadservice/index.html')
 
+def cors_preflight_view(request):
+    response = JsonResponse({'detail': 'CORS Preflight'})
+    response["Access-Control-Allow-Origin"] = "*"
+    response["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS, PUT, DELETE"
+    response["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    return response
+
 
 #IIS Debug
 def print_meta(request):
@@ -146,3 +153,4 @@ class ObtainJWTView(APIView):
                 'email': user.email, # type: ignore
             })
         return Response({'error': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
+    

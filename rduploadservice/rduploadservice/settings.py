@@ -1,3 +1,4 @@
+# settings.py
 from pathlib import Path
 from decouple import config
 import os
@@ -13,7 +14,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Use environment variable to set DEBUG
 DEBUG = str(config('DJANGO_DEBUG', default='true')).lower() == 'true'
 
 ALLOWED_HOSTS = ['rd.weiman.com', 'uploads.purposebuiltbrands.com', '127.0.0.1', 'localhost']
@@ -27,8 +27,44 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
-    'corsheaders',
     'uploadservice'
+    'corsheaders',  # Add corsheaders
+]
+
+MIDDLEWARE = [
+  'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_CREDENTIALS = False
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
 
 REST_FRAMEWORK = {
@@ -38,8 +74,8 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=360),  # Adjust to 30 minutes
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),     # Adjust to 7 days
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=360),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
     'ALGORITHM': 'HS256',
@@ -55,22 +91,10 @@ SIMPLE_JWT = {
     'JTI_CLAIM': 'jti',
 }
 
-MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-
-
 AUTHENTICATION_BACKENDS = [
-    'uploadservice.backends.WindowsAuthenticationBackend',  # custom backend
+    'uploadservice.backends.WindowsAuthenticationBackend',
     'django.contrib.auth.backends.RemoteUserBackend',
-     'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 LOGIN_URL = '/admin/login/'
@@ -128,44 +152,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 APPEND_SLASH = True
-
-# CORS settings
-CORS_ALLOWED_ORIGINS = [
-    'https://rd.purposebuiltbrands.com',
-    'https://rd.purposebuiltbrands.com/',
-    'rd.purposebuiltbrands.com',
-    'rd.purposebuiltbrands.com/'
-]
-
-CORS_ALLOW_CREDENTIALS = True
-
-CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
-]
-
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
-
-
-# curl -H "Authorization: Bearer <your_access_token>" http://localhost:8000/api/some-endpoint/
