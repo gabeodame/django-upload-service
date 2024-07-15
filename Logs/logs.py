@@ -3914,6 +3914,7 @@ ModuleNotFoundError: No module named 'applicationinsights'
 OSError: [Errno 22] Invalid argument
 2024-06-21 11:06:36.473905: Running on_exit tasks
 2024-06-21 11:06:36.482904: wfastcgi.py 3.0.0 closed
+<<<<<<< HEAD
 2024-06-21 11:47:00.074230: Failed to import applicationinsights: Traceback (most recent call last):
   File "C:\Python312\Lib\site-packages\wfastcgi.py", line 639, in read_wsgi_handler
     from applicationinsights.requests import WSGIApplication
@@ -5753,3 +5754,94 @@ StdErr:
 RuntimeError: populate() isn't reentrant
 2024-07-12 14:00:38.811841: Running on_exit tasks
 2024-07-12 14:00:38.822838: wfastcgi.py 3.0.0 closed
+=======
+>>>>>>> parent of 14da6ca (complete upload service troubleshoot)
+2024-07-15 10:12:41.301212: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 10:12:41.336214: unable to import ptvsd to enable debugging
+2024-07-15 10:12:41.348220: wfastcgi.py 3.0.0 initialized
+2024-07-15 10:19:05.453015: Running on_exit tasks
+2024-07-15 10:48:06.713608: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 10:48:06.755610: unable to import ptvsd to enable debugging
+2024-07-15 10:48:06.767600: wfastcgi.py 3.0.0 initialized
+2024-07-15 10:55:05.817060: Running on_exit tasks
+2024-07-15 11:01:13.879457: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:01:13.921447: unable to import ptvsd to enable debugging
+2024-07-15 11:01:13.938458: wfastcgi.py 3.0.0 initialized
+2024-07-15 11:06:27.848768: Running on_exit tasks
+2024-07-15 11:06:27.848768: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-07-15 11:15:19.873408: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:15:19.874406: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:15:19.875400: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:15:19.908408: unable to import ptvsd to enable debugging
+2024-07-15 11:15:19.908408: unable to import ptvsd to enable debugging
+2024-07-15 11:15:19.920475: wfastcgi.py 3.0.0 initialized
+2024-07-15 11:20:32.584902: Running on_exit tasks
+2024-07-15 11:20:32.585903: Running on_exit tasks
+2024-07-15 11:20:32.585903: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-07-15 11:20:32.595900: Running on_exit tasks
+2024-07-15 11:29:56.034686: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:29:56.034686: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:29:56.037761: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:29:56.079647: unable to import ptvsd to enable debugging
+2024-07-15 11:29:56.079647: unable to import ptvsd to enable debugging
+2024-07-15 11:29:56.103646: wfastcgi.py 3.0.0 initialized
+2024-07-15 11:29:56.103646: wfastcgi.py 3.0.0 initialized
+2024-07-15 11:29:56.103646: wfastcgi.py 3.0.0 initialized
+2024-07-15 11:32:56.026868: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:32:56.066860: unable to import ptvsd to enable debugging
+2024-07-15 11:32:56.083840: wfastcgi.py 3.0.0 initialized
+2024-07-15 11:33:30.412913: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:33:30.451859: unable to import ptvsd to enable debugging
+2024-07-15 11:33:30.465858: wfastcgi.py 3.0.0 initialized
+2024-07-15 11:38:44.361787: Running on_exit tasks
+2024-07-15 11:38:45.055057: Running on_exit tasks
+2024-07-15 11:38:45.055057: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-07-15 11:47:56.164936: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:47:56.165935: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:47:56.202931: unable to import ptvsd to enable debugging
+2024-07-15 11:47:56.215929: wfastcgi.py 3.0.0 initialized
+2024-07-15 11:47:56.215929: unable to import ptvsd to enable debugging
+2024-07-15 11:47:56.226932: wfastcgi.py 3.0.0 initialized
+2024-07-15 11:47:56.257944: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-15 11:47:56.272930: unable to import ptvsd to enable debugging
+2024-07-15 11:47:56.282936: wfastcgi.py 3.0.0 initialized
+2024-07-15 11:57:50.172964: Running on_exit tasks
+2024-07-15 11:57:50.172964: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-07-15 11:57:50.173964: Running on_exit tasks
+2024-07-15 11:57:50.195978: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-07-15 11:57:50.195978: Running on_exit tasks

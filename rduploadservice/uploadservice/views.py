@@ -1,19 +1,14 @@
-from datetime import datetime
 from io import BytesIO
 import json
 from typing import Dict, Any, List, Union
-from django.shortcuts import render
-import jwt
+from django.shortcuts import render 
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.permissions import AllowAny, IsAuthenticated
-from django.contrib.auth import authenticate, login
-from django.conf import settings
 
-from uploadservice.backends import WindowsAuthenticationBackend
+from django.conf import settings
 from .serializers import FileSerializer
 from .models import UploadedFile
 from django.core.files.storage import default_storage
@@ -21,21 +16,16 @@ from django.core.files.base import ContentFile
 from django.http import HttpRequest, JsonResponse
 from django.contrib.auth.models import User
 import os
-import logging
 
-logger = logging.getLogger(__name__)
+from django.contrib.auth import authenticate
 
 def index(request):
-    print(request)
     return render(request, 'uploadservice/index.html')
 
+# Remove custom CORS headers from this view
 def cors_preflight_view(request):
     response = JsonResponse({'detail': 'CORS Preflight'})
-    response["Access-Control-Allow-Origin"] = "*"
-    response["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS, PUT, DELETE"
-    response["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
     return response
-
 
 #IIS Debug
 def print_meta(request):
@@ -61,8 +51,7 @@ def print_meta(request):
 
 class FileUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)
-    permission_classes = [IsAuthenticated]
-    
+    # permission_classes = [authenticate.is]
 
     def post(self, request: HttpRequest, folder: str, brand_name: str, kind: str, date: str = '') -> JsonResponse:
         if not request.FILES:
@@ -103,7 +92,7 @@ class FileUploadView(APIView):
             uploaded_file_record.save()
 
             uploaded_files_info.append({
-                "uploaded_file_id": uploaded_file_record.id,
+                "uploaded_file_id": uploaded_file_record.id,  
                 "file_path": uploaded_file_record.filepath
             })
 
@@ -111,17 +100,14 @@ class FileUploadView(APIView):
             "message": "Files uploaded successfully",
             "uploaded_files": uploaded_files_info
         }, status=status.HTTP_201_CREATED)
-      
-
+        
+        
 class LoginView(APIView):
     def post(self, request: HttpRequest) -> JsonResponse:
         user = authenticate(request, remote_user=request.META.get('REMOTE_USER'))
         if user is not None and isinstance(user, User):
             refresh = RefreshToken.for_user(user)
-            access_token = refresh.access_token # type: ignore
-            
-            logger.info(access_token)
-            print(access_token)
+            access_token = refresh.token
 
             return JsonResponse({
                 'refresh': str(refresh),
@@ -132,25 +118,3 @@ class LoginView(APIView):
             })
         else:
             return JsonResponse({'error': 'Authentication failed'}, status=status.HTTP_401_UNAUTHORIZED)
-
-class ObtainJWTView(APIView):
-    def post(self, request, *args, **kwargs):
-        username = request.data.get('username')
-        user = authenticate(request, remote_user=username)  # Use Windows Authentication
-
-        if user is not None:
-            refresh = RefreshToken.for_user(user)
-            access_token = refresh.access_token # type: ignore
-            
-            logger.info(access_token)
-            print(access_token)
-
-            return Response({
-                'refresh': str(refresh),
-                'access': str(access_token),
-                'username': user.username, # type: ignore
-                'full_name': f'{user.first_name} {user.last_name}', # type: ignore
-                'email': user.email, # type: ignore
-            })
-        return Response({'error': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
-    
