@@ -1,0 +1,12 @@
+{% extends "base.html" %} 
+{% block title %} Uploads Service {% endblock %}
+{% block content %} 
+ <h1>List of Uploaded Files</h1>
+    <ul>
+        {% for file in files %}
+            <li>
+                <a href="{% url 'serve_file' file.id %}">{{ file.file_name }}</a> - Uploaded on {{ file.upload_time }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

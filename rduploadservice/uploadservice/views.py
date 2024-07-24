@@ -1,5 +1,6 @@
 from io import BytesIO
 import json
+import mimetypes
 from typing import Dict, Any, List, Union
 from django.shortcuts import render 
 from rest_framework.views import APIView
@@ -13,7 +14,7 @@ from .serializers import FileSerializer
 from .models import UploadedFile
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
-from django.http import HttpRequest, JsonResponse
+from django.http import Http404, HttpRequest, HttpResponse, JsonResponse
 from django.contrib.auth.models import User
 import os
 
@@ -48,6 +49,48 @@ def print_meta(request):
         json.dump(meta_dict, f, indent=4)
     
     return JsonResponse(meta_dict)
+
+# file list view
+def list_files(request):
+    files = UploadedFile.objects.all()
+    return render(request, 'uploadservice/list_files.html', {'files': files})
+
+#serve file by id
+def serve_file(request, file_id):
+    try:
+        uploaded_file = UploadedFile.objects.get(id=file_id)
+    except UploadedFile.DoesNotExist:
+        raise Http404("File not found")
+
+    file_path = uploaded_file.filepath
+    if not os.path.exists(file_path):
+        raise Http404("File not found")
+
+    mime_type, _ = mimetypes.guess_type(file_path)
+    if not mime_type:
+        mime_type = 'application/octet-stream'
+
+    with open(file_path, 'rb') as file:
+        response = HttpResponse(file.read(), content_type=mime_type)
+        response['Content-Disposition'] = f'inline; filename={os.path.basename(file_path)}'
+        return response
+
+def get_file_details(request, file_id):
+    try:
+        uploaded_file = UploadedFile.objects.get(id=file_id)
+        file_data = {
+            "id": uploaded_file.id,
+            "folder": uploaded_file.folder,
+            "brand_name": uploaded_file.brand_name,
+            "date": uploaded_file.date,
+            "kind": uploaded_file.kind,
+            "file_name": uploaded_file.file_name,
+            "filepath": uploaded_file.filepath,
+            "upload_time": uploaded_file.upload_time,
+        }
+        return JsonResponse(file_data)
+    except UploadedFile.DoesNotExist:
+        return JsonResponse({"error": "File not found"}, status=404)
 
 class FileUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)
@@ -100,6 +143,7 @@ class FileUploadView(APIView):
             "message": "Files uploaded successfully",
             "uploaded_files": uploaded_files_info
         }, status=status.HTTP_201_CREATED)
+        
         
         
 class LoginView(APIView):
