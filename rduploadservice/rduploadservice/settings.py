@@ -19,6 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
 JWT_SIGNING_KEY = config('JWT_SIGNING_KEY')
+OPENAI_API_KEY = config("OPENAI_API_KEY", default=None)
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'uploadservice',  # Fixed here
+    "ai_file_reader",
     'corsheaders',  # Add corsheaders
 ]
 
@@ -181,6 +183,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
+TEMP_MEDIA_ROOT = os.path.join(BASE_DIR, 'temp_media')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
