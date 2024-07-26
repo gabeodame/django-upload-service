@@ -69,7 +69,7 @@ def process_files(request):
                 "For container in [Drum, Tote, Super Sack, Bag] and certifications in [Safer Choice, "
                 "Kosher, NSF, Green Seal, Whole Foods, EPA, FDA, Halal], break into a list with the most relevant match. "
                 "The dataTypes used for the form is {}. Be aware of units and convert to "
-                "Imperial where appropriate, as the user is based in the USA. The chemNo field is reserved, so leave it empty."
+                "Imperial where appropriate, as the user is based in the USA. The chemNo field is reserved, so leave it empty. your response should be just the json with the specified fields to so it can be used to initialize a form"
             ).format(FormDataType)
 
             assistant = client.beta.assistants.create(

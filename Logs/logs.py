@@ -7448,3 +7448,38 @@ OSError: [Errno 22] Invalid argument
 2024-07-25 23:18:14.912795: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
 2024-07-25 23:18:14.953797: unable to import ptvsd to enable debugging
 2024-07-25 23:18:14.968793: wfastcgi.py 3.0.0 initialized
+2024-07-25 23:30:28.976261: Running on_exit tasks
+2024-07-25 23:33:17.847855: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-25 23:33:17.945835: unable to import ptvsd to enable debugging
+2024-07-25 23:33:17.958867: wfastcgi.py 3.0.0 initialized
+2024-07-25 23:48:24.143208: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-07-25 23:48:24.206207: Running on_exit tasks
+2024-07-25 23:48:24.632215: Running on_exit tasks
+2024-07-25 23:49:11.835094: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-25 23:49:11.850099: unable to import ptvsd to enable debugging
+2024-07-25 23:49:11.863094: wfastcgi.py 3.0.0 initialized
+2024-07-25 23:54:24.721054: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+           ^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2024-07-25 23:54:24.751057: Running on_exit tasks
+2024-07-25 23:54:24.751057: Running on_exit tasks
+2024-07-25 23:54:51.596095: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-25 23:54:51.633100: unable to import ptvsd to enable debugging
+2024-07-25 23:54:51.647100: wfastcgi.py 3.0.0 initialized
+2024-07-25 23:57:07.338663: wfastcgi.py exiting because ai_file_reader\urls.py has changed, matching .*((\.py)|(\.config))$
+2024-07-25 23:57:07.359664: Running on_exit tasks
+2024-07-26 00:00:10.939121: wfastcgi.py will restart when files in C:\inetpub\rdportal-iisnode\python_server\rduploadservice\ are changed: .*((\.py)|(\.config))$
+2024-07-26 00:00:10.961115: unable to import ptvsd to enable debugging
+2024-07-26 00:00:10.995115: wfastcgi.py 3.0.0 initialized
