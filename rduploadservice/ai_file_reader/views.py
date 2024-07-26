@@ -44,40 +44,46 @@ def process_files(request):
                 for file_path in file_paths
             ]
 
-            # Corrected prompt_content with valid JSON-like structure
+            # prompt_content with valid JSON-like structure
             prompt_content = (
-                "Using the attached information and any other files available to you, fill the chemical "
-                "intake form with the following columns: chemNo, chemDesc, chemGrade, commodity, testing, "
-                "testProps, companyName, brandName, outsourced_only, composition, WPSID, sdsSaved, sdsFile, "
-                "coaSaved, coaFile, sds_date, hazardous, oxidizer, form, color, odor, appearance, flashPoint, "
-                "freezePoint, spg, pH_neat, vaporPressure, meltingPoint, pH_1percent, blkDens, corrosive, "
-                "solubility, pictograms, ppe, respiratorRequired, respiratorType, respiratorNo, maskType, "
-                "catridgeType, storageLocation, container, tsca, sara313Reportable, sara313CasNo, "
-                "prop65, water_reaction, contains_cl, one_4_dioxane, propConc, "
-                "readilyBiodegradable, bioMethod, bioAmount, "
-                "marinePollutant, canadian_DSL_NDSL, voc, percentVoc, percentLVPVOC, derivedFromNaturalSrc, "
-                "percentNaturallyDerived, bioBased, percentBiobased, tier_II_reportable, tier_II_amount, "
-                "tier_II_EHS, tier_II_hazard_composition, tier_II_hazard_form, tier_II_hazard_class, "
-                "containsBacteria, containsPalm_PalmKernelOil, otherOils, palmOil_Other_certified, "
-                "certifications, notes, otherFiles. Convert the filled form into "
-                "a JSON object to be easily consumed by the front end react-hook-form as initial values. If data "
-                "for a field is not specified, use an empty string; for fields whose responses are boolean, use "
-                "Yes,No. For composition and propConc fields, "
-                "it is likely to be a list of multiple components; create an appropriate array with chemicalName, "
-                "casNo and percentage. Where percentage is given as a range, calculate the average. "
-                "Similarly, for other fields where a range is given, use average values. "
-                "For container in [Drum, Tote, Super Sack, Bag] and certifications in [Safer Choice, "
-                "Kosher, NSF, Green Seal, Whole Foods, EPA, FDA, Halal], break into a list with the most relevant match. "
-                "The dataTypes used for the form is {}. Be aware of units and convert to "
-                "Imperial where appropriate, as the user is based in the USA. The chemNo field is reserved, so leave it empty. your response should be just the json with the specified fields to so it can be used to initialize a form"
+            "Using the attached information and any other files available to you, fill the chemical intake form with "
+            "the following columns: chemNo, chemDesc, chemGrade, commodity, testing, testProps, companyName, brandName, "
+            "outsourced_only, composition, WPSID, sdsSaved, sdsFile, coaSaved, coaFile, sds_date, hazardous, oxidizer, "
+            "form, color, odor, appearance, flashPoint, freezePoint, spg, pH_neat, vaporPressure, meltingPoint, "
+            "pH_1percent, blkDens, corrosive, solubility, pictograms, ppe, respiratorRequired, respiratorType, respiratorNo, maskType, "
+            "catridgeType, storageLocation, container, tsca, sara313Reportable, sara313CasNo, prop65, water_reaction, "
+            "contains_cl, one_4_dioxane, propConc, readilyBiodegradable, bioMethod, bioAmount, marinePollutant, canadian_DSL_NDSL, "
+            "voc, percentVoc, percentLVPVOC, derivedFromNaturalSrc, percentNaturallyDerived, bioBased, percentBiobased, "
+            "tier_II_reportable, tier_II_amount, tier_II_EHS, tier_II_hazard_composition, tier_II_hazard_form, tier_II_hazard_class, "
+            "containsBacteria, containsPalm_PalmKernelOil, otherOils, palmOil_Other_certified, certifications, notes, otherFiles. "
+            
+            "Convert the filled form into a JSON object to be easily consumed by the front-end react-hook-form as initial values. "
+            
+            "Specific instructions: \n"
+            "1. If data for a field is not specified, use an empty string ('').\n"
+            "2. For fields whose responses are boolean, use 'Yes' or 'No'.\n"
+            "3. For 'composition' and 'propConc' fields, create an array with 'chemicalName', 'casNo', and 'percentage'. "
+            "   - If 'percentage' is given as a range, calculate the average.\n"
+            "4. For other fields where a range is given, use average values.\n"
+            "5. For 'container' field, use values from [Drum, Tote, Super Sack, Bag] as a list with the most relevant match.\n"
+            "6. For 'certifications' field, use values from [Safer Choice, Kosher, NSF, Green Seal, Whole Foods, EPA, FDA, Halal] "
+            "   as a list with the most relevant match.\n"
+            "7. Be aware of units and convert to Imperial where appropriate, as the user is based in the USA.\n"
+            "8. The 'chemNo' field is reserved, so leave it empty.\n"
+            "9. Ensure date fields are in the format 'YYYY-MM-DD'. If only month and year are provided, use the first day of the month (e.g., '05/2013' -> '2013-05-01').\n"
+            "10. For 'ppe' and 'pictograms', align with the most significant options from the provided lists.\n"
+
+            "Your response should be a JSON object with the specified fields to initialize the form."
             ).format(FormDataType)
 
             assistant = client.beta.assistants.create(
                 name='R&D Scientist and Product Developer',
-                instructions="You are an expert product developer for household, institutional and healthcare products. "
-                             "Use your knowledge to review chemical documents such as Safety Data Sheets (SDS) and "
-                             "Technical Data Sheets (TDS) and provide insights for developing sustainable and performant products "
-                             "as well as generating sound specifications",
+                instructions=(
+                    "You are an expert product developer specializing in household, institutional, and healthcare products. "
+                    "Your role involves reviewing chemical documents such as Safety Data Sheets (SDS) and Technical Data Sheets (TDS) "
+                    "to provide insights for developing sustainable and high-performing products. "
+                    "Additionally, you are responsible for generating accurate and thorough product specifications."
+                ),
                 model='gpt-4o',
                 tools=[{"type": "file_search"}]
             )
