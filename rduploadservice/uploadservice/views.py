@@ -18,6 +18,7 @@ from django.http import Http404, HttpRequest, HttpResponse, JsonResponse
 from django.contrib.auth.models import User
 import os
 
+
 from django.contrib.auth import authenticate
 
 def index(request):
@@ -97,52 +98,71 @@ class FileUploadView(APIView):
     # permission_classes = [authenticate.is]
 
     def post(self, request: HttpRequest, folder: str, brand_name: str, kind: str, date: str = '') -> JsonResponse:
-        if not request.FILES:
-            return JsonResponse({"error": "No files uploaded."}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            if not request.FILES:
+                return JsonResponse({"error": "No files uploaded."}, status=status.HTTP_400_BAD_REQUEST)
 
-        uploaded_files_info: List[Dict[str, Any]] = []
+            uploaded_files_info: List[Dict[str, Any]] = []
 
-        for key, uploaded_file in request.FILES.items():
-            original_filename = uploaded_file.name
-            file_basename, file_extension = os.path.splitext(original_filename)
+            for key, uploaded_file in request.FILES.items():
+                original_filename = uploaded_file.name
+                file_basename, file_extension = os.path.splitext(original_filename)
 
-            base_path = os.path.join(settings.MEDIA_ROOT, 'chemicalUploads')
-            if kind == "sdsFile":
-                folder_path = os.path.join(base_path, folder, 'sds')
-                file_name = f"{file_basename}_{brand_name}_{date or ''}{file_extension}"
-            elif kind == "coaFile":
-                folder_path = os.path.join(base_path, folder, 'coa')
-                file_name = f"{file_basename}_{brand_name}{file_extension}"
-            else:
-                folder_path = os.path.join(base_path, folder, 'other-files')
-                file_name = f"{file_basename}_{brand_name}{file_extension}"
+                base_path = os.path.join(settings.MEDIA_ROOT, 'chemicalUploads')
+                if kind == "sdsFile":
+                    folder_path = os.path.join(base_path, folder, 'sds')
+                    file_name = f"{file_basename}_{brand_name}_{date or ''}{file_extension}"
+                elif kind == "coaFile":
+                    folder_path = os.path.join(base_path, folder, 'coa')
+                    file_name = f"{file_basename}_{brand_name}{file_extension}"
+                else:
+                    folder_path = os.path.join(base_path, folder, 'other-files')
+                    file_name = f"{file_basename}_{brand_name}{file_extension}"
 
-            if not os.path.exists(folder_path):
-                os.makedirs(folder_path)
+                # Ensure the directory exists
+                if not os.path.exists(folder_path):
+                    os.makedirs(folder_path)
 
-            file_path = os.path.join(folder_path, file_name)
-            default_storage.save(file_path, ContentFile(uploaded_file.read()))
+                file_path = os.path.join(folder_path, file_name)
 
-            # Save file details to the database, including the file path
-            uploaded_file_record = UploadedFile(
-                folder=folder,
-                brand_name=brand_name,
-                date=date or '',  # Handle optional date
-                kind=kind,
-                file_name=file_name,
-                filepath=file_path  # Save the file path
-            )
-            uploaded_file_record.save()
+                try:
+                    # Save the file to the specified location
+                    default_storage.save(file_path, ContentFile(uploaded_file.read()))
+                except Exception as file_error:
+                    # logger.error(f"Error saving file {file_name} to {file_path}: {file_error}")
+                    print(f"Error saving file {file_name} to {file_path}: {file_error}")  # Print error to console
+                    return JsonResponse({"error": f"Failed to save file: {file_name}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-            uploaded_files_info.append({
-                "uploaded_file_id": uploaded_file_record.id,  
-                "file_path": uploaded_file_record.filepath
-            })
+                try:
+                    # Save file details to the database, including the file path
+                    uploaded_file_record = UploadedFile(
+                        folder=folder,
+                        brand_name=brand_name,
+                        date=date or '',  # Handle optional date
+                        kind=kind,
+                        file_name=file_name,
+                        filepath=file_path  # Save the file path
+                    )
+                    uploaded_file_record.save()
 
-        return JsonResponse({
-            "message": "Files uploaded successfully",
-            "uploaded_files": uploaded_files_info
-        }, status=status.HTTP_201_CREATED)
+                    uploaded_files_info.append({
+                        "uploaded_file_id": uploaded_file_record.id,
+                        "file_path": uploaded_file_record.filepath
+                    })
+                except Exception as db_error:
+                    # logger.error(f"Error saving file metadata for {file_name} to the database: {db_error}")
+                    print(f"Error saving file metadata for {file_name} to the database: {db_error}")  # Print error to console
+                    return JsonResponse({"error": f"Failed to save file metadata for {file_name}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+            return JsonResponse({
+                "message": "Files uploaded successfully",
+                "uploaded_files": uploaded_files_info
+            }, status=status.HTTP_201_CREATED)
+
+        except Exception as e:
+            # logger.error(f"Unexpected error during file upload: {e}")
+            print(f"Unexpected error during file upload: {e}")  # Print error to console
+            return JsonResponse({"error": "An unexpected error occurred during file upload."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
         
         
