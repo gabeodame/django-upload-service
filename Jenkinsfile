@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     environment {
-        VENV = "/Users/gabrielodame/.jenkins/python-venv" // Virtual environment path
-        PIP_CACHE = "/Users/gabrielodame/.jenkins/.pip-cache" // pip cache
-        DJANGO_SETTINGS_MODULE = "rduploadservice.settings" // Django settings module
-        PYTHON = "/Users/gabrielodame/.jenkins/python-venv/bin/python" // Python binary in virtual environment
-        PYTHONPATH = "${WORKSPACE}/rduploadservice" // Add project directory to PYTHONPATH
-        PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" // Explicit PATH for Python 3.10
+        VENV = "/Users/gabrielodame/.jenkins/python-venv"
+        PIP_CACHE = "/Users/gabrielodame/.jenkins/.pip-cache"
+        DJANGO_SETTINGS_MODULE = "rduploadservice.settings"
+        PYTHON = "/Users/gabrielodame/.jenkins/python-venv/bin/python"
+        PYTHONPATH = "${WORKSPACE}/rduploadservice"
+        PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
     }
 
     stages {
@@ -25,12 +25,25 @@ pipeline {
             }
         }
 
+        stage('Debug Python Version') {
+            steps {
+                echo 'Debugging Python version...'
+                sh '''
+                set -e
+                echo "Global Python version:"
+                python3 --version
+                '''
+            }
+        }
+
         stage('Setup Python Environment') {
             steps {
                 echo 'Setting up Python virtual environment with Python 3.10...'
                 sh '''
                 set -e
-                echo "Creating virtual environment..."
+                echo "Removing old virtual environment, if any..."
+                rm -rf ${VENV}
+                echo "Creating new virtual environment..."
                 /usr/local/bin/python3.10 -m venv ${VENV}
                 echo "Upgrading pip and tools..."
                 ${VENV}/bin/python -m pip install --upgrade pip setuptools wheel
@@ -48,7 +61,10 @@ pipeline {
                     exit 1
                 fi
                 echo "Installing dependencies..."
-                ${VENV}/bin/python -m pip install --no-cache-dir --cache-dir=${PIP_CACHE} -r requirements.txt
+                ${VENV}/bin/python -m pip install --no-cache-dir --cache-dir=${PIP_CACHE} -r requirements.txt || {
+                    echo "Fallback: Installing compatible Django version."
+                    ${VENV}/bin/python -m pip install Django==4.2
+                }
                 echo "Installed packages:"
                 ${VENV}/bin/python -m pip list
                 '''
