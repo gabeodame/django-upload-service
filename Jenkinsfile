@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo 'Installing dependencies...'
                 sh """
-                ${PYTHON} -m pip install --no-cache-dir -r requirements.txt
+                ${PYTHON} -m pip install --no-cache-dir -r ./rduploadservice/requirements.txt
                 """
             }
         }
