@@ -2,45 +2,46 @@ pipeline {
     agent any
 
     environment {
-        // Python environment settings
-        VENV = "${WORKSPACE}/venv"
-        PIP_CACHE = "${WORKSPACE}/.pip-cache"
-        DJANGO_SETTINGS_MODULE = "rduploadservice.settings"
-        PYTHON = "${VENV}/bin/python"
-        PYTHONPATH = "${WORKSPACE}/rduploadservice"
+        VENV = "${WORKSPACE}/venv"  // Virtual environment path
+        PIP_CACHE = "${WORKSPACE}/.pip-cache"  // Cache for pip installations
+        DJANGO_SETTINGS_MODULE = "rduploadservice.settings"  // Django settings module
+        PYTHON = "${VENV}/bin/python"  // Python executable in the virtual environment
+        PYTHONPATH = "${WORKSPACE}/rduploadservice"  // Add project directory to PYTHONPATH
     }
 
     stages {
         stage('Initialize') {
             steps {
-                echo 'Preparing environment...'
+                echo 'Cleaning workspace and preparing environment...'
                 cleanWs()
             }
         }
 
         stage('Checkout Code') {
             steps {
-                echo 'Checking out code...'
+                echo 'Checking out source code...'
                 checkout scm
             }
         }
 
         stage('Setup Python Environment') {
             steps {
-                echo 'Setting up Python environment...'
+                echo 'Setting up Python virtual environment...'
                 sh """
-                python3 -m venv ${VENV}
+                python3 -m venv ${VENV}  // Create a virtual environment
                 source ${VENV}/bin/activate
-                ${PYTHON} -m pip install --upgrade pip setuptools wheel
+                ${PYTHON} -m pip install --upgrade pip setuptools wheel  // Upgrade essential tools
                 """
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                echo 'Installing dependencies...'
+                echo 'Installing dependencies from requirements.txt...'
                 sh """
-                ${PYTHON} -m pip install --no-cache-dir -r ./requirements.txt
+                source ${VENV}/bin/activate
+                ${PYTHON} -m pip install --no-cache-dir -r rduploadservice/requirements.txt  // Use the correct requirements.txt path
+                ${PYTHON} -m pip list  // Debugging: List installed packages
                 """
             }
         }
@@ -57,7 +58,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                echo 'Running tests...'
+                echo 'Running tests with pytest...'
                 sh """
                 source ${VENV}/bin/activate
                 ${PYTHON} -m pytest --junitxml=test-results.xml
@@ -65,14 +66,14 @@ pipeline {
             }
             post {
                 always {
-                    junit 'test-results.xml'
+                    junit 'test-results.xml'  // Publish test results
                 }
             }
         }
 
         stage('Static Files Collection') {
             steps {
-                echo 'Collecting static files...'
+                echo 'Collecting static files for deployment...'
                 sh """
                 source ${VENV}/bin/activate
                 ${PYTHON} ./rduploadservice/manage.py collectstatic --noinput --settings=${DJANGO_SETTINGS_MODULE}
@@ -84,7 +85,20 @@ pipeline {
             steps {
                 echo 'Deploying application...'
                 sh """
-                echo "Deploying the Django application..."
+                echo "Deploy step is a placeholder. Add deployment commands here."
+                """
+            }
+        }
+
+        stage('Debug Environment') {
+            steps {
+                echo 'Debugging environment...'
+                sh """
+                source ${VENV}/bin/activate
+                echo "Using Python binary: $(which python)"
+                echo "Using Pip binary: $(which pip)"
+                ${PYTHON} --version
+                ${PYTHON} -m pip list
                 """
             }
         }
@@ -92,13 +106,13 @@ pipeline {
 
     post {
         success {
-            echo 'Build completed successfully!'
+            echo 'Pipeline completed successfully!'
         }
         failure {
-            echo 'Build failed. Please check logs.'
+            echo 'Pipeline failed. Please check the logs for details.'
         }
         always {
-            cleanWs()
+            cleanWs()  // Clean up workspace after every build
         }
     }
 }
