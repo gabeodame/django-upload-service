@@ -7,6 +7,7 @@ pipeline {
         DJANGO_SETTINGS_MODULE = "rduploadservice.settings" // Django settings module
         PYTHON = "/Users/gabrielodame/.jenkins/python-venv/bin/python" // Python binary in virtual environment
         PYTHONPATH = "${WORKSPACE}/rduploadservice" // Add project directory to PYTHONPATH
+        PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" // Explicit PATH for Python 3.10
     }
 
     stages {
