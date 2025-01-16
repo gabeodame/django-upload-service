@@ -18,15 +18,19 @@ pipeline {
             }
         }
 
-        stage('Debug Python Environment') {
+        stage('Checkout Code') {
             steps {
-                echo 'Checking Python 3.10 environment...'
+                echo 'Checking out source code...'
+                checkout scm
+            }
+        }
+
+        stage('Debug Workspace') {
+            steps {
+                echo 'Inspecting workspace structure...'
                 sh '''
-                set -e
-                echo "Python 3.10 version:"
-                /usr/local/bin/python3.10 --version || { echo "Python 3.10 not found"; exit 1; }
-                echo "Python 3.10 location:"
-                which python3.10 || { echo "which command failed to find Python 3.10"; exit 1; }
+                echo "Current workspace contents:"
+                ls -R ${WORKSPACE}
                 '''
             }
         }
@@ -38,11 +42,11 @@ pipeline {
                 set -e
                 if [ ! -d "${VENV}" ]; then
                     echo "Creating virtual environment with Python 3.10..."
-                    /usr/local/bin/python3.10 -m venv ${VENV} || { echo "Failed to create virtual environment"; exit 1; }
+                    /usr/local/bin/python3.10 -m venv ${VENV}
                 else
                     echo "Virtual environment already exists."
                 fi
-                ${VENV}/bin/python -m pip install --upgrade pip setuptools wheel || { echo "Failed to upgrade pip or setuptools"; exit 1; }
+                ${VENV}/bin/python -m pip install --upgrade pip setuptools wheel
                 '''
             }
         }
@@ -53,10 +57,10 @@ pipeline {
                 sh '''
                 set -e
                 if [ ! -f requirements.txt ]; then
-                    echo "requirements.txt not found in workspace. Exiting."
+                    echo "requirements.txt not found in the root directory. Exiting."
                     exit 1
                 fi
-                ${VENV}/bin/python -m pip install --no-cache-dir --cache-dir=${PIP_CACHE} -r requirements.txt || { echo "Failed to install dependencies"; exit 1; }
+                ${VENV}/bin/python -m pip install --no-cache-dir --cache-dir=${PIP_CACHE} -r requirements.txt
                 ${VENV}/bin/python -m pip list
                 '''
             }
@@ -67,7 +71,7 @@ pipeline {
                 echo 'Running Django migrations...'
                 sh '''
                 set -e
-                ${VENV}/bin/python ./rduploadservice/manage.py migrate --settings=${DJANGO_SETTINGS_MODULE} || { echo "Failed to run migrations"; exit 1; }
+                ${VENV}/bin/python ./rduploadservice/manage.py migrate --settings=${DJANGO_SETTINGS_MODULE}
                 '''
             }
         }
@@ -77,7 +81,7 @@ pipeline {
                 echo 'Running tests with pytest...'
                 sh '''
                 set -e
-                ${VENV}/bin/python -m pytest --junitxml=test-results.xml || { echo "Tests failed"; exit 1; }
+                ${VENV}/bin/python -m pytest --junitxml=test-results.xml
                 '''
             }
             post {
@@ -92,7 +96,7 @@ pipeline {
                 echo 'Collecting static files for deployment...'
                 sh '''
                 set -e
-                ${VENV}/bin/python ./rduploadservice/manage.py collectstatic --noinput --settings=${DJANGO_SETTINGS_MODULE} || { echo "Failed to collect static files"; exit 1; }
+                ${VENV}/bin/python ./rduploadservice/manage.py collectstatic --noinput --settings=${DJANGO_SETTINGS_MODULE}
                 '''
             }
         }
