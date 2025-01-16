@@ -28,9 +28,9 @@ pipeline {
             steps {
                 echo 'Setting up Python virtual environment...'
                 sh """
-                python3 -m venv ${VENV}  // Create a virtual environment
-                source ${VENV}/bin/activate
-                ${PYTHON} -m pip install --upgrade pip setuptools wheel  // Upgrade essential tools
+                python3 -m venv \$VENV  // Create a virtual environment
+                source \$VENV/bin/activate
+                \$PYTHON -m pip install --upgrade pip setuptools wheel  // Upgrade essential tools
                 """
             }
         }
@@ -39,9 +39,9 @@ pipeline {
             steps {
                 echo 'Installing dependencies from requirements.txt...'
                 sh """
-                source ${VENV}/bin/activate
-                ${PYTHON} -m pip install --no-cache-dir -r rduploadservice/requirements.txt  // Use the correct requirements.txt path
-                ${PYTHON} -m pip list  // Debugging: List installed packages
+                source \$VENV/bin/activate
+                \$PYTHON -m pip install --no-cache-dir -r rduploadservice/requirements.txt  // Use the correct requirements.txt path
+                \$PYTHON -m pip list  // Debugging: List installed packages
                 """
             }
         }
@@ -50,8 +50,8 @@ pipeline {
             steps {
                 echo 'Running Django migrations...'
                 sh """
-                source ${VENV}/bin/activate
-                ${PYTHON} ./rduploadservice/manage.py migrate --settings=${DJANGO_SETTINGS_MODULE}
+                source \$VENV/bin/activate
+                \$PYTHON ./rduploadservice/manage.py migrate --settings=\$DJANGO_SETTINGS_MODULE
                 """
             }
         }
@@ -60,8 +60,8 @@ pipeline {
             steps {
                 echo 'Running tests with pytest...'
                 sh """
-                source ${VENV}/bin/activate
-                ${PYTHON} -m pytest --junitxml=test-results.xml
+                source \$VENV/bin/activate
+                \$PYTHON -m pytest --junitxml=test-results.xml
                 """
             }
             post {
@@ -75,8 +75,8 @@ pipeline {
             steps {
                 echo 'Collecting static files for deployment...'
                 sh """
-                source ${VENV}/bin/activate
-                ${PYTHON} ./rduploadservice/manage.py collectstatic --noinput --settings=${DJANGO_SETTINGS_MODULE}
+                source \$VENV/bin/activate
+                \$PYTHON ./rduploadservice/manage.py collectstatic --noinput --settings=\$DJANGO_SETTINGS_MODULE
                 """
             }
         }
@@ -94,11 +94,11 @@ pipeline {
             steps {
                 echo 'Debugging environment...'
                 sh """
-                source ${VENV}/bin/activate
-                echo "Using Python binary: $(which python)"
-                echo "Using Pip binary: $(which pip)"
-                ${PYTHON} --version
-                ${PYTHON} -m pip list
+                source \$VENV/bin/activate
+                echo "Using Python binary: \$(which python)"
+                echo "Using Pip binary: \$(which pip)"
+                \$PYTHON --version
+                \$PYTHON -m pip list
                 """
             }
         }
