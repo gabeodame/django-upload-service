@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
-        VENV = "/Users/gabrielodame/.jenkins/python-venv" // Virtual environment path outside workspace
-        PIP_CACHE = "/Users/gabrielodame/.jenkins/.pip-cache" // pip cache directory
-        DJANGO_SETTINGS_MODULE = "rduploadservice.settings" // Django settings module
-        PYTHON = "/Users/gabrielodame/.jenkins/python-venv/bin/python" // Python binary inside virtual environment
-        PYTHONPATH = "${WORKSPACE}/rduploadservice" // Add project directory to PYTHONPATH
+        VENV = "/Users/gabrielodame/.jenkins/python-venv"
+        PIP_CACHE = "/Users/gabrielodame/.jenkins/.pip-cache"
+        DJANGO_SETTINGS_MODULE = "rduploadservice.settings"
+        PYTHON = "/Users/gabrielodame/.jenkins/python-venv/bin/python"
+        PYTHONPATH = "${WORKSPACE}/rduploadservice"
     }
 
     stages {
@@ -24,21 +24,27 @@ pipeline {
             }
         }
 
+        stage('Debug Workspace') {
+            steps {
+                echo 'Inspecting workspace structure...'
+                sh '''
+                echo "Workspace structure:"
+                ls -R ${WORKSPACE}
+                '''
+            }
+        }
+
         stage('Setup Python Environment') {
             steps {
                 echo 'Setting up Python virtual environment...'
                 sh '''
-                set -e  # Exit immediately if any command fails
-
-                # Create virtual environment if it doesn't already exist
+                set -e
                 if [ ! -d "/Users/gabrielodame/.jenkins/python-venv" ]; then
                     echo "Creating virtual environment..."
                     python3 -m venv /Users/gabrielodame/.jenkins/python-venv
                 else
                     echo "Virtual environment already exists."
                 fi
-
-                # Upgrade pip and essential tools
                 /Users/gabrielodame/.jenkins/python-venv/bin/python -m pip install --upgrade pip setuptools wheel
                 '''
             }
@@ -49,15 +55,7 @@ pipeline {
                 echo 'Installing dependencies from requirements.txt...'
                 sh '''
                 set -e
-
-                # Ensure virtual environment is active
-                if [ ! -f "/Users/gabrielodame/.jenkins/python-venv/bin/activate" ]; then
-                    echo "Error: Virtual environment not found. Please check the setup stage."
-                    exit 1
-                fi
-
-                # Install dependencies
-                /Users/gabrielodame/.jenkins/python-venv/bin/python -m pip install --no-cache-dir --cache-dir=/Users/gabrielodame/.jenkins/.pip-cache -r rduploadservice/requirements.txt
+                /Users/gabrielodame/.jenkins/python-venv/bin/python -m pip install --no-cache-dir --cache-dir=/Users/gabrielodame/.jenkins/.pip-cache -r requirements.txt
                 /Users/gabrielodame/.jenkins/python-venv/bin/python -m pip list
                 '''
             }
@@ -83,7 +81,7 @@ pipeline {
             }
             post {
                 always {
-                    junit 'test-results.xml' // Publish test results
+                    junit 'test-results.xml'
                 }
             }
         }
@@ -103,22 +101,6 @@ pipeline {
                 echo 'Deploying application...'
                 sh '''
                 echo "Deploy step is a placeholder. Add deployment commands here."
-                '''
-            }
-        }
-
-        stage('Debug Environment') {
-            steps {
-                echo 'Debugging environment and permissions...'
-                sh '''
-                echo "Current user: $(whoami)"
-                echo "Current directory: $(pwd)"
-                echo "Python version:"
-                /Users/gabrielodame/.jenkins/python-venv/bin/python --version
-                echo "Virtual environment contents:"
-                ls -l /Users/gabrielodame/.jenkins/python-venv/bin
-                echo "Workspace contents:"
-                ls -l ${WORKSPACE}
                 '''
             }
         }
