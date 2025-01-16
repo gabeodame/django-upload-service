@@ -25,27 +25,14 @@ pipeline {
             }
         }
 
-        stage('Debug Workspace') {
-            steps {
-                echo 'Inspecting workspace structure...'
-                sh '''
-                echo "Current workspace contents:"
-                ls -R ${WORKSPACE}
-                '''
-            }
-        }
-
         stage('Setup Python Environment') {
             steps {
                 echo 'Setting up Python virtual environment with Python 3.10...'
                 sh '''
                 set -e
-                if [ ! -d "${VENV}" ]; then
-                    echo "Creating virtual environment with Python 3.10..."
-                    /usr/local/bin/python3.10 -m venv ${VENV}
-                else
-                    echo "Virtual environment already exists."
-                fi
+                echo "Creating virtual environment..."
+                /usr/local/bin/python3.10 -m venv ${VENV}
+                echo "Upgrading pip and tools..."
                 ${VENV}/bin/python -m pip install --upgrade pip setuptools wheel
                 '''
             }
@@ -57,10 +44,12 @@ pipeline {
                 sh '''
                 set -e
                 if [ ! -f requirements.txt ]; then
-                    echo "requirements.txt not found in the root directory. Exiting."
+                    echo "requirements.txt not found. Exiting."
                     exit 1
                 fi
+                echo "Installing dependencies..."
                 ${VENV}/bin/python -m pip install --no-cache-dir --cache-dir=${PIP_CACHE} -r requirements.txt
+                echo "Installed packages:"
                 ${VENV}/bin/python -m pip list
                 '''
             }
