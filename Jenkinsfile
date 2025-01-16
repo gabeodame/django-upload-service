@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
-        VENV = "/Users/gabrielodame/.jenkins/venv" // Virtual environment path
-        PIP_CACHE = "/Users/gabrielodame/.jenkins/.pip-cache" // pip cache
+        VENV = "/Users/gabrielodame/.jenkins/python-venv" // Virtual environment path outside workspace
+        PIP_CACHE = "/Users/gabrielodame/.jenkins/.pip-cache" // pip cache directory
         DJANGO_SETTINGS_MODULE = "rduploadservice.settings" // Django settings module
-        PYTHON = "/Users/gabrielodame/.jenkins/venv/bin/python" // Python in venv
-        PYTHONPATH = "/Users/gabrielodame/.jenkins/workspace/rduploadservice" // Add project directory to PYTHONPATH
+        PYTHON = "/Users/gabrielodame/.jenkins/python-venv/bin/python" // Python binary inside virtual environment
+        PYTHONPATH = "${WORKSPACE}/rduploadservice" // Add project directory to PYTHONPATH
     }
 
     stages {
@@ -28,9 +28,18 @@ pipeline {
             steps {
                 echo 'Setting up Python virtual environment...'
                 sh '''
-                python3 -m venv /Users/gabrielodame/.jenkins/venv
-                source /Users/gabrielodame/.jenkins/venv/bin/activate
-                /Users/gabrielodame/.jenkins/venv/bin/python -m pip install --upgrade pip setuptools wheel
+                set -e  # Exit immediately if any command fails
+
+                # Create virtual environment if it doesn't already exist
+                if [ ! -d "/Users/gabrielodame/.jenkins/python-venv" ]; then
+                    echo "Creating virtual environment..."
+                    python3 -m venv /Users/gabrielodame/.jenkins/python-venv
+                else
+                    echo "Virtual environment already exists."
+                fi
+
+                # Upgrade pip and essential tools
+                /Users/gabrielodame/.jenkins/python-venv/bin/python -m pip install --upgrade pip setuptools wheel
                 '''
             }
         }
@@ -39,9 +48,17 @@ pipeline {
             steps {
                 echo 'Installing dependencies from requirements.txt...'
                 sh '''
-                source /Users/gabrielodame/.jenkins/venv/bin/activate
-                /Users/gabrielodame/.jenkins/venv/bin/python -m pip install --no-cache-dir --cache-dir=/Users/gabrielodame/.jenkins/.pip-cache -r requirements.txt
-                /Users/gabrielodame/.jenkins/venv/bin/python -m pip list
+                set -e
+
+                # Ensure virtual environment is active
+                if [ ! -f "/Users/gabrielodame/.jenkins/python-venv/bin/activate" ]; then
+                    echo "Error: Virtual environment not found. Please check the setup stage."
+                    exit 1
+                fi
+
+                # Install dependencies
+                /Users/gabrielodame/.jenkins/python-venv/bin/python -m pip install --no-cache-dir --cache-dir=/Users/gabrielodame/.jenkins/.pip-cache -r rduploadservice/requirements.txt
+                /Users/gabrielodame/.jenkins/python-venv/bin/python -m pip list
                 '''
             }
         }
@@ -50,8 +67,8 @@ pipeline {
             steps {
                 echo 'Running Django migrations...'
                 sh '''
-                source /Users/gabrielodame/.jenkins/venv/bin/activate
-                /Users/gabrielodame/.jenkins/venv/bin/python ./rduploadservice/manage.py migrate --settings=rduploadservice.settings
+                set -e
+                /Users/gabrielodame/.jenkins/python-venv/bin/python ./rduploadservice/manage.py migrate --settings=${DJANGO_SETTINGS_MODULE}
                 '''
             }
         }
@@ -60,23 +77,23 @@ pipeline {
             steps {
                 echo 'Running tests with pytest...'
                 sh '''
-                source /Users/gabrielodame/.jenkins/venv/bin/activate
-                /Users/gabrielodame/.jenkins/venv/bin/python -m pytest --junitxml=test-results.xml
+                set -e
+                /Users/gabrielodame/.jenkins/python-venv/bin/python -m pytest --junitxml=test-results.xml
                 '''
             }
             post {
                 always {
-                    junit 'test-results.xml'
+                    junit 'test-results.xml' // Publish test results
                 }
             }
         }
 
-        stage('Static Files Collection') {
+        stage('Collect Static Files') {
             steps {
                 echo 'Collecting static files for deployment...'
                 sh '''
-                source /Users/gabrielodame/.jenkins/venv/bin/activate
-                /Users/gabrielodame/.jenkins/venv/bin/python ./rduploadservice/manage.py collectstatic --noinput --settings=rduploadservice.settings
+                set -e
+                /Users/gabrielodame/.jenkins/python-venv/bin/python ./rduploadservice/manage.py collectstatic --noinput --settings=${DJANGO_SETTINGS_MODULE}
                 '''
             }
         }
@@ -96,8 +113,12 @@ pipeline {
                 sh '''
                 echo "Current user: $(whoami)"
                 echo "Current directory: $(pwd)"
-                ls -ld /Users/gabrielodame/.jenkins
-                ls -ld /Users/gabrielodame/.jenkins/workspace
+                echo "Python version:"
+                /Users/gabrielodame/.jenkins/python-venv/bin/python --version
+                echo "Virtual environment contents:"
+                ls -l /Users/gabrielodame/.jenkins/python-venv/bin
+                echo "Workspace contents:"
+                ls -l ${WORKSPACE}
                 '''
             }
         }
@@ -111,8 +132,7 @@ pipeline {
             echo 'Pipeline failed. Check logs for details.'
         }
         always {
-            echo 'Cleaning up virtual environment...'
-            sh "rm -rf /Users/gabrielodame/.jenkins/venv" // Remove the virtual environment
+            echo 'Cleaning up workspace...'
             cleanWs()
         }
     }
