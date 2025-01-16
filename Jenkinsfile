@@ -7,13 +7,13 @@ pipeline {
         PIP_CACHE = "${WORKSPACE}/.pip-cache"
         DJANGO_SETTINGS_MODULE = "rduploadservice.settings"
         PYTHON = "${VENV}/bin/python"
+        PYTHONPATH = "${WORKSPACE}/rduploadservice"
     }
 
     stages {
         stage('Initialize') {
             steps {
                 echo 'Preparing environment...'
-                // Clean workspace before starting
                 cleanWs()
             }
         }
@@ -30,8 +30,8 @@ pipeline {
                 echo 'Setting up Python environment...'
                 sh """
                 python3 -m venv ${VENV}
-                ${PYTHON} -m pip install --upgrade pip
-                ${PYTHON} -m pip install --upgrade setuptools wheel
+                source ${VENV}/bin/activate
+                ${PYTHON} -m pip install --upgrade pip setuptools wheel
                 """
             }
         }
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo 'Installing dependencies...'
                 sh """
-                ${PYTHON} -m pip install --cache-dir ${PIP_CACHE} -r requirements.txt
+                ${PYTHON} -m pip install --no-cache-dir -r requirements.txt
                 """
             }
         }
@@ -49,6 +49,7 @@ pipeline {
             steps {
                 echo 'Running Django migrations...'
                 sh """
+                source ${VENV}/bin/activate
                 ${PYTHON} ./rduploadservice/manage.py migrate --settings=${DJANGO_SETTINGS_MODULE}
                 """
             }
@@ -58,6 +59,7 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 sh """
+                source ${VENV}/bin/activate
                 ${PYTHON} -m pytest --junitxml=test-results.xml
                 """
             }
@@ -72,6 +74,7 @@ pipeline {
             steps {
                 echo 'Collecting static files...'
                 sh """
+                source ${VENV}/bin/activate
                 ${PYTHON} ./rduploadservice/manage.py collectstatic --noinput --settings=${DJANGO_SETTINGS_MODULE}
                 """
             }
@@ -80,7 +83,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                // Deployment logic goes here (e.g., copy files, trigger deploy scripts, etc.)
                 sh """
                 echo "Deploying the Django application..."
                 """
@@ -96,8 +98,7 @@ pipeline {
             echo 'Build failed. Please check logs.'
         }
         always {
-            // Clean up virtual environment after the build
-            deleteDir()
+            cleanWs()
         }
     }
 }
