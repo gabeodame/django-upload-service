@@ -17,19 +17,14 @@ pipeline {
             }
         }
 
-        stage('Checkout Code') {
+        stage('Debug Python Environment') {
             steps {
-                echo 'Checking out source code...'
-                checkout scm
-            }
-        }
-
-        stage('Debug Workspace') {
-            steps {
-                echo 'Inspecting workspace structure...'
+                echo 'Checking Python 3.10 environment...'
                 sh '''
-                echo "Workspace structure:"
-                ls -R ${WORKSPACE}
+                echo "Python 3.10 version:"
+                /usr/local/bin/python3.10 --version
+                echo "Python 3.10 location:"
+                which python3.10
                 '''
             }
         }
@@ -39,13 +34,13 @@ pipeline {
                 echo 'Setting up Python virtual environment with Python 3.10...'
                 sh '''
                 set -e
-                if [ ! -d "/Users/gabrielodame/.jenkins/python-venv" ]; then
+                if [ ! -d "${VENV}" ]; then
                     echo "Creating virtual environment with Python 3.10..."
-                    python3.10 -m venv /Users/gabrielodame/.jenkins/python-venv
+                    /usr/local/bin/python3.10 -m venv ${VENV}
                 else
                     echo "Virtual environment already exists."
                 fi
-                /Users/gabrielodame/.jenkins/python-venv/bin/python -m pip install --upgrade pip setuptools wheel
+                ${VENV}/bin/python -m pip install --upgrade pip setuptools wheel
                 '''
             }
         }
@@ -55,8 +50,12 @@ pipeline {
                 echo 'Installing dependencies from requirements.txt...'
                 sh '''
                 set -e
-                /Users/gabrielodame/.jenkins/python-venv/bin/python -m pip install --no-cache-dir --cache-dir=/Users/gabrielodame/.jenkins/.pip-cache -r requirements.txt
-                /Users/gabrielodame/.jenkins/python-venv/bin/python -m pip list
+                if [ ! -f requirements.txt ]; then
+                    echo "requirements.txt not found in workspace. Exiting."
+                    exit 1
+                fi
+                ${VENV}/bin/python -m pip install --no-cache-dir --cache-dir=${PIP_CACHE} -r requirements.txt
+                ${VENV}/bin/python -m pip list
                 '''
             }
         }
@@ -66,7 +65,7 @@ pipeline {
                 echo 'Running Django migrations...'
                 sh '''
                 set -e
-                /Users/gabrielodame/.jenkins/python-venv/bin/python ./rduploadservice/manage.py migrate --settings=${DJANGO_SETTINGS_MODULE}
+                ${VENV}/bin/python ./rduploadservice/manage.py migrate --settings=${DJANGO_SETTINGS_MODULE}
                 '''
             }
         }
@@ -76,12 +75,12 @@ pipeline {
                 echo 'Running tests with pytest...'
                 sh '''
                 set -e
-                /Users/gabrielodame/.jenkins/python-venv/bin/python -m pytest --junitxml=test-results.xml
+                ${VENV}/bin/python -m pytest --junitxml=test-results.xml
                 '''
             }
             post {
                 always {
-                    junit 'test-results.xml' // Publish test results
+                    junit 'test-results.xml'
                 }
             }
         }
@@ -91,7 +90,7 @@ pipeline {
                 echo 'Collecting static files for deployment...'
                 sh '''
                 set -e
-                /Users/gabrielodame/.jenkins/python-venv/bin/python ./rduploadservice/manage.py collectstatic --noinput --settings=${DJANGO_SETTINGS_MODULE}
+                ${VENV}/bin/python ./rduploadservice/manage.py collectstatic --noinput --settings=${DJANGO_SETTINGS_MODULE}
                 '''
             }
         }
