@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
-        VENV = "/Users/gabrielodame/.jenkins/python-venv"
-        PIP_CACHE = "/Users/gabrielodame/.jenkins/.pip-cache"
-        DJANGO_SETTINGS_MODULE = "rduploadservice.settings"
-        PYTHON = "/Users/gabrielodame/.jenkins/python-venv/bin/python"
-        PYTHONPATH = "${WORKSPACE}/rduploadservice"
+        VENV = "/Users/gabrielodame/.jenkins/python-venv" // Virtual environment path
+        PIP_CACHE = "/Users/gabrielodame/.jenkins/.pip-cache" // pip cache
+        DJANGO_SETTINGS_MODULE = "rduploadservice.settings" // Django settings module
+        PYTHON = "/Users/gabrielodame/.jenkins/python-venv/bin/python" // Python binary in virtual environment
+        PYTHONPATH = "${WORKSPACE}/rduploadservice" // Add project directory to PYTHONPATH
     }
 
     stages {
@@ -36,12 +36,12 @@ pipeline {
 
         stage('Setup Python Environment') {
             steps {
-                echo 'Setting up Python virtual environment...'
+                echo 'Setting up Python virtual environment with Python 3.10...'
                 sh '''
                 set -e
                 if [ ! -d "/Users/gabrielodame/.jenkins/python-venv" ]; then
-                    echo "Creating virtual environment..."
-                    python3 -m venv /Users/gabrielodame/.jenkins/python-venv
+                    echo "Creating virtual environment with Python 3.10..."
+                    python3.10 -m venv /Users/gabrielodame/.jenkins/python-venv
                 else
                     echo "Virtual environment already exists."
                 fi
@@ -81,7 +81,7 @@ pipeline {
             }
             post {
                 always {
-                    junit 'test-results.xml'
+                    junit 'test-results.xml' // Publish test results
                 }
             }
         }
