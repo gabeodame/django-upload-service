@@ -147,4 +147,4 @@ Send files to the `/ai-file-reader/` endpoint for chemical review and product in
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details..
