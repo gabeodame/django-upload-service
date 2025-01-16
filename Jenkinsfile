@@ -40,7 +40,7 @@ pipeline {
                 echo 'Installing dependencies from requirements.txt...'
                 sh '''
                 source /Users/gabrielodame/.jenkins/venv/bin/activate
-                /Users/gabrielodame/.jenkins/venv/bin/python -m pip install --no-cache-dir --cache-dir=/Users/gabrielodame/.jenkins/.pip-cache -r rduploadservice/requirements.txt
+                /Users/gabrielodame/.jenkins/venv/bin/python -m pip install --no-cache-dir --cache-dir=/Users/gabrielodame/.jenkins/.pip-cache -r requirements.txt
                 /Users/gabrielodame/.jenkins/venv/bin/python -m pip list
                 '''
             }
