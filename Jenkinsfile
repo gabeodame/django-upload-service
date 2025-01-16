@@ -49,7 +49,7 @@ pipeline {
             steps {
                 echo 'Running Django migrations...'
                 sh """
-                ${PYTHON} manage.py migrate --settings=${DJANGO_SETTINGS_MODULE}
+                ${PYTHON} ./rduploadservice/manage.py migrate --settings=${DJANGO_SETTINGS_MODULE}
                 """
             }
         }
@@ -72,7 +72,7 @@ pipeline {
             steps {
                 echo 'Collecting static files...'
                 sh """
-                ${PYTHON} manage.py collectstatic --noinput --settings=${DJANGO_SETTINGS_MODULE}
+                ${PYTHON} ./rduploadservice/manage.py collectstatic --noinput --settings=${DJANGO_SETTINGS_MODULE}
                 """
             }
         }
