@@ -2,8 +2,8 @@ from django.conf import settings
 from typing_extensions import override
 import openai
 
-open_ai_key = settings.OPENAI_API_KEY
-client = openai.OpenAI(api_key=open_ai_key)
+# open_ai_key = settings.OPENAI_API_KEY
+# client = openai.OpenAI(api_key=open_ai_key)
 
 class EventHandler:
     def __init__(self):
