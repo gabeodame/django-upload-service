@@ -18,7 +18,6 @@ from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter
 from django_filters.rest_framework import DjangoFilterBackend
-from .models import UploadedFile
 from .serializers import UploadedFileSerializer
 
 from django.conf import settings
