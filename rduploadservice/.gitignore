@@ -160,6 +160,3 @@ venv.bak/
 # system specific files
 .DS_Store
 Thumbs.db
-
-logs/
-sandbox/

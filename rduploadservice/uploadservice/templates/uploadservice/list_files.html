@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uploaded Files</title>
+  <style>
+    :root {
+      --pbb-color-primary: #092686;
+      --pbb-color-primary-variant: #001b70;
+      --pbb-color-secondary: #04ad86;
+      --pbb-color-secondary-variant: #70a52b;
+      --pbb-color-secondary-light: #5b8b1c6c;
+      --row-hover: #f0f6ff;
+      --row-alt: #f9fbfc;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+      color: #1f1f1f;
+    }
+
+    h1 {
+      color: var(--pbb-color-primary);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    select {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    thead {
+      background-color: #f1f5f9;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      color: #374151;
+      font-weight: 600;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    tbody tr {
+      border-top: 1px solid #f1f5f9;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--row-alt);
+    }
+
+    tbody tr:hover {
+      background-color: var(--row-hover);
+    }
+
+    a {
+      color: var(--pbb-color-primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Uploaded Files</h1>
+
+  <label for="kindFilter">Filter by Type:</label>
+  <select id="kindFilter" onchange="filterTable()">
+    <option value="all">All</option>
+    <option value="sdsFile">SDS</option>
+    <option value="coaFile">COA</option>
+    <option value="otherFile">Other</option>
+  </select>
+
+  <table id="fileTable">
+    <thead>
+      <tr>
+        <th>Stock Code</th>
+        <th>Brand Name</th>
+        <th>Date</th>
+        <th>File Name</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for file in files %}
+        <tr data-kind="{{ file.kind }}">
+          <td>{{ file.folder }}</td>
+          <td>{{ file.brand_name }}</td>
+          <td>{{ file.date }}</td>
+          <td>{{ file.file_name }}</td>
+          <td><a href="/files/{{ file.id }}" target="_blank">View</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <script>
+    function filterTable() {
+      const filter = document.getElementById('kindFilter').value;
+      const rows = document.querySelectorAll('#fileTable tbody tr');
+
+      rows.forEach(row => {
+        const kind = row.getAttribute('data-kind');
+        row.style.display = (filter === 'all' || kind === filter) ? '' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
