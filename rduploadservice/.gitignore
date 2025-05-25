@@ -1,162 +1,98 @@
+# Node.js
 /node_modules
-/temp_media
 
-# Byte-compiled / optimized / DLL files
+# Python bytecode
 __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
+# Compiled C extensions
 *.so
 
-# Distribution / packaging
-.Python
-env/
+# Virtual environments
+.venv/
 venv/
+env/
 ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+env.bak/
+venv.bak/
 
-# Django stuff:
+# Django
 *.log
 *.pot
 *.pyc
 *.pyo
 *.pyd
 db.sqlite3
-media
 *.sqlite3
-
-# If your database settings are using postgres
 *.pgsql
+media/
+temp_media/
 
-# Flask stuff:
-instance/
-.webassets-cache
+# Dotenv
+.env
 
-# Scrapy stuff:
-.scrapy
+# Packaging
+*.egg
+*.egg-info/
+.installed.cfg
+MANIFEST
+build/
+dist/
+wheels/
+sdist/
+.eggs/
+lib/
+lib64/
+parts/
+develop-eggs/
+downloads/
 
-# Sphinx documentation
-docs/_build/
+# Pipenv / Poetry
+Pipfile.lock
+pipenv/
+poetry.lock
 
-# PyBuilder
-target/
+# mypy / typing
+.mypy_cache/
+.dmypy.json
+.pytype/
+.pyre/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-# Pipenv
-pipenv
-pipenv.*
-pipenv/pipfile
-pipenv/pyvenv.cfg
-pipenv/pipfile.lock
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-
-# celery beat schedule file
+# Celery
 celerybeat-schedule
 celerybeat.pid
 
-# dotenv
-.env
+# Jupyter
+.ipynb_checkpoints
 
-
-# virtualenv
-.venv
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# venv & ENV folders
-env/
-venv/
-ENV/
-.env
-
-# Spyder project settings
-.spyderproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# cProfile Dumps
-*.pstat
-
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
-htmlcov/
+# Testing
 .tox/
 .coverage
 coverage.xml
 *.cover
 .hypothesis/
+.cache/
+htmlcov/
 
-# Pytest
-.cache
+# Docs
+docs/_build/
+site/
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+# Sphinx / MkDocs / PyBuilder
+target/
 
-# IDEs and editors
+# IDEs
 .idea/
 .vscode/
-*.swp
-*.swo
-*.sublime-project
-*.sublime-workspace
-.vscode/
-.vscode-test/
-.vscode-recommendations
-.vscode-server
+.sublime-project
+.sublime-workspace
+.spyderproject
+.ropeproject
 
-# system specific files
+# OS files
 .DS_Store
 Thumbs.db
+
+# Installer logs
+pip-log.txt
