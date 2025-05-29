@@ -1,22 +1,19 @@
-from dataclasses import dataclass
 from typing import Optional, List, Union
 from datetime import date
+from pydantic import BaseModel
 
-@dataclass
-class ChemicalComposition:
+class ChemicalComposition(BaseModel):
     casNo: Optional[str]
     chemicalName: Optional[str]
     percentage: float
 
-@dataclass
-class PPE:
+class PPE(BaseModel):
     health: Optional[int]
     flammability: Optional[int]
     physical: Optional[int]
     protection: str
 
-@dataclass
-class FormDataType:
+class FormDataType(BaseModel):
     # General Information
     WPSID: Optional[str]
     chemNo: Optional[str]

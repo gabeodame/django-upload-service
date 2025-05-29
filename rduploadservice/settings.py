@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'uploadservice',  # Fixed here
     "ai_file_reader",
     'corsheaders',  # Add corsheaders
+    'django_celery_results', # Celery results backend
+    # 'django_celery_beat',  # Celery periodic tasks
 ]
 
 MIDDLEWARE = [
@@ -189,3 +191,6 @@ TEMP_MEDIA_ROOT = os.path.join(BASE_DIR, 'temp_media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 APPEND_SLASH = True
+
+CELERY_RESULT_BACKEND = 'django-db'
+# CELERY_BROKER_URL = config('CELERY_BROKER_URL', default='redis://localhost:6379/0')
