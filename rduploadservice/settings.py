@@ -195,3 +195,5 @@ APPEND_SLASH = True
 
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_BROKER_URL = config('CELERY_BROKER_URL', default='redis://localhost:6379/0')
+CELERY_TASK_ALWAYS_EAGER = str(config('CELERY_TASK_ALWAYS_EAGER', default='false')).lower() == 'true'
+CELERY_TASK_EAGER_PROPAGATES = CELERY_TASK_ALWAYS_EAGER
