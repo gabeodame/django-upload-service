@@ -20,6 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 JWT_SIGNING_KEY = config('JWT_SIGNING_KEY')
 OPENAI_API_KEY = config("OPENAI_API_KEY", default=None)
+AI_READER_MODEL = config("AI_READER_MODEL", default="gpt-4o-mini")
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
@@ -193,4 +194,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 APPEND_SLASH = True
 
 CELERY_RESULT_BACKEND = 'django-db'
-# CELERY_BROKER_URL = config('CELERY_BROKER_URL', default='redis://localhost:6379/0')
+CELERY_BROKER_URL = config('CELERY_BROKER_URL', default='redis://localhost:6379/0')

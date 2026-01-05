@@ -6,8 +6,14 @@ from django.views.decorators.http import require_GET
 def task_status_view(request, task_id):
     result = AsyncResult(task_id)
 
-    return JsonResponse({
+    payload = {
         'task_id': task_id,
         'status': result.status,
-        'result': result.result if result.ready() else None
-    })
+    }
+
+    if result.successful():
+        payload['result'] = result.result
+    elif result.failed():
+        payload['error'] = str(result.result)
+
+    return JsonResponse(payload)

@@ -3,6 +3,7 @@ import uuid
 from django.conf import settings
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from kombu.exceptions import OperationalError
 from .storage import TemporaryFileStorage
 from .tasks.tasks import process_uploaded_files_task
 
@@ -22,30 +23,39 @@ def process_files(request):
     if not uploaded_files:
         return JsonResponse({'error': 'Empty file list'}, status=400)
 
-    saved_file_paths = []
+    saved_file_names = []
     try:
         # Save uploaded files temporarily
         for uploaded_file in uploaded_files:
             file_name = temp_storage.save(uploaded_file.name, uploaded_file)
-            file_path = temp_storage.path(file_name)
-            saved_file_paths.append(file_path)
+            saved_file_names.append(file_name)
 
         # Generate a unique task ID
         task_id = str(uuid.uuid4())
 
         # Dispatch the Celery task for asynchronous processing
-        process_uploaded_files_task.delay(saved_file_paths, task_id)
+        try:
+            process_uploaded_files_task.delay(saved_file_names, task_id)
+        except OperationalError:
+            for file_name in saved_file_names:
+                try:
+                    temp_storage.delete(file_name)
+                except Exception:
+                    pass
+            return JsonResponse(
+                {'error': 'Task queue unavailable. Please try again later.'},
+                status=503
+            )
 
         # Respond immediately with the task ID
         return JsonResponse({'task_id': task_id}, status=202)
 
     except Exception as e:
         # Clean up any saved files in case of an error
-        for file_path in saved_file_paths:
+        for file_name in saved_file_names:
             try:
-                temp_storage.delete(file_path)
-            except Exception as delete_error:
-                # Log the deletion error if necessary
+                temp_storage.delete(file_name)
+            except Exception:
                 pass
 
         return JsonResponse({'error': str(e)}, status=500)
